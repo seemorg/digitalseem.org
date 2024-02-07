@@ -90,7 +90,7 @@ export default function HomePage() {
         </div> */}
 
         <div className="mt-20">
-          <h2>Subscribe to our newsletter</h2>
+          <h2>Get our monthly updates</h2>
 
           <div className="group relative z-0 mt-5 w-[400px] max-w-full transition-all focus-within:z-10">
             <input
