@@ -2,12 +2,12 @@ import Container from "@/components/Container";
 import { Logo, Signature } from "@/components/Icons";
 import { config } from "@/lib/config";
 import { Button } from "@/components/ui/button";
-import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import NewsletterForm from "./newsletter-form";
 
 export default function HomePage() {
   return (
     <div
-      className="text-primary-100 relative min-h-screen w-full py-16 antialiased"
+      className="relative min-h-screen w-full py-16 text-primary-100 antialiased"
       style={{
         fontFeatureSettings: '"liga","dlig"',
       }}
@@ -21,7 +21,7 @@ export default function HomePage() {
           <div className="flex items-center gap-10">
             <Button
               asChild
-              className="text-primary-100 flex items-center gap-3 text-lg"
+              className="flex items-center gap-3 text-lg text-primary-100"
               size="lg"
               variant="link"
             >
@@ -30,7 +30,7 @@ export default function HomePage() {
 
             <Button
               asChild
-              className="text-primary-100 flex items-center gap-3 text-lg"
+              className="flex items-center gap-3 text-lg text-primary-100"
               size="lg"
               variant="link"
             >
@@ -90,27 +90,7 @@ export default function HomePage() {
         </div> */}
 
         <div className="mt-20">
-          <h2>Get our monthly updates</h2>
-
-          <div className="group relative z-0 mt-5 w-[400px] max-w-full transition-all focus-within:z-10">
-            <input
-              id="email"
-              placeholder=" "
-              className="border-primary-100 peer block w-full border bg-transparent px-6 pb-4 pt-6 text-base/6 text-white ring-4 ring-transparent transition focus:border-white focus:outline-none focus:ring-white/5"
-              type="email"
-              name="email"
-            />
-            <label
-              htmlFor="email"
-              className="text-primary-100 pointer-events-none absolute left-6 top-1/2 -mt-3 origin-left text-base/6 transition-all duration-200 peer-focus:-translate-y-5 peer-focus:scale-75 peer-focus:font-semibold peer-focus:text-white peer-[:not(:placeholder-shown)]:-translate-y-4 peer-[:not(:placeholder-shown)]:scale-75 peer-[:not(:placeholder-shown)]:font-semibold peer-[:not(:placeholder-shown)]:text-white"
-            >
-              Email
-            </label>
-
-            <button className="absolute bottom-0 right-0 top-0 flex h-full w-14 items-center justify-center bg-white text-black transition-colors hover:bg-white/90">
-              <ArrowRightIcon className="h-6 w-6" />
-            </button>
-          </div>
+          <NewsletterForm />
         </div>
       </Container>
 
