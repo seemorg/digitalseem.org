@@ -16,14 +16,19 @@ export const config = {
     height: 720,
     alt: "Seemore Cover",
   },
-  careersUrl: "/careers",
   url: "https://digitalseem.org",
 };
 
-export const getMetadata = (): Metadata => {
-  const title = config.org;
-  const description = config.description;
+export const getMetadata = ({
+  title: baseTitle = config.org,
+  description = config.description,
+}: {
+  title?: string;
+  description?: string;
+} = {}): Metadata => {
   const images = [config.image];
+  const title =
+    baseTitle === config.org ? baseTitle : `${baseTitle} | ${config.org}`;
 
   return {
     title,

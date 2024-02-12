@@ -9,6 +9,7 @@
   --gradient-color-1: #f6ca6b;
 }
 
+.prose li::before,
 .list li::before {
   content: "—";
   @apply left-0 mr-2 w-auto opacity-50;
