@@ -25,12 +25,6 @@ export default async function CareersPage() {
         </div>
       )}
 
-      {careers.mission && (
-        <div className="mt-4 text-lg">
-          {await compileMarkdown(careers.mission)}
-        </div>
-      )}
-
       <ul className="mt-20 flex flex-col gap-5">
         {careers.jobs.map((job) => (
           <Link
