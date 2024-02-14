@@ -72,7 +72,7 @@ export default async function CareerPage({ params: { slug } }: PageProps) {
       )}
 
       {career.content && (
-        <div className="prose prose-xl prose-invert prose-p:text-primary-100 prose-li:text-primary-100 prose-ul:list-none mt-14 max-w-full">
+        <div className="prose prose-lg prose-invert mt-14 max-w-full prose-p:text-primary-100 prose-ul:list-none prose-li:text-primary-100">
           {await compileMarkdown(career.content)}
         </div>
       )}
