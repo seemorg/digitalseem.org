@@ -34,16 +34,37 @@ export async function generateStaticParams(): Promise<PageProps[]> {
 }
 
 export default async function CareerPage({ params: { slug } }: PageProps) {
-  const { jobs, mission, description } = await getOpenCareers();
+  const {
+    jobs,
+    description: descriptionMd,
+    mission: missionMd,
+  } = await getOpenCareers();
   const career = jobs.find((job) => job.slug === slug);
 
   if (!career) {
     notFound();
   }
 
+  const {
+    title: titleMd,
+    content: contentMd,
+    salary: salaryMd,
+    application: applicationMd,
+  } = career;
+
+  const [title, description, mission, content, salary, application] =
+    await Promise.all([
+      titleMd ? compileMarkdown(titleMd) : null,
+      descriptionMd ? compileMarkdown(descriptionMd) : null,
+      missionMd ? compileMarkdown(missionMd) : null,
+      contentMd ? compileMarkdown(contentMd) : null,
+      salaryMd ? compileMarkdown(salaryMd) : null,
+      applicationMd ? compileMarkdown(applicationMd) : null,
+    ]);
+
   return (
     <div className="min-h-[50vh]">
-      <h1 className="text-4xl font-bold">{career.title}</h1>
+      <h1 className="text-4xl font-bold">{title}</h1>
 
       {/* eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing */}
       {(career.type || career.location) && (
@@ -56,42 +77,34 @@ export default async function CareerPage({ params: { slug } }: PageProps) {
       {/* eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing */}
       {(description || mission) && (
         <div className="mt-10 flex flex-col gap-6">
-          {description && (
-            <div className="text-lg">{await compileMarkdown(description)}</div>
-          )}
+          {description && <div className="text-lg">{description}</div>}
 
           {mission && (
             <div>
               <h2 className="text-2xl font-bold text-white">Our Mission</h2>
-              <div className="mt-2 text-lg">
-                {await compileMarkdown(mission)}
-              </div>
+              <div className="mt-2 text-lg">{mission}</div>
             </div>
           )}
         </div>
       )}
 
-      {career.content && (
-        <div className="prose prose-lg prose-invert mt-14 max-w-full prose-p:text-primary-100 prose-ul:list-none prose-li:text-primary-100">
-          {await compileMarkdown(career.content)}
+      {content && (
+        <div className="prose prose-lg prose-invert mt-14 max-w-full prose-headings:mb-2 prose-p:mb-2 prose-p:text-primary-100 prose-ul:mt-0 prose-ul:list-none prose-li:text-primary-100">
+          {content}
         </div>
       )}
 
-      {career.salary && (
+      {salary && (
         <>
           <h2 className="mt-16 text-2xl font-bold text-white">Salary</h2>
-          <div className="mt-2 text-lg">
-            {await compileMarkdown(career.salary)}
-          </div>
+          <div className="mt-2 text-lg">{salary}</div>
         </>
       )}
 
-      {career.application && (
+      {application && (
         <>
           <h2 className="mt-16 text-2xl font-bold text-white">Application</h2>
-          <div className="mt-2 text-lg">
-            {await compileMarkdown(career.application)}
-          </div>
+          <div className="mt-2 text-lg">{application}</div>
         </>
       )}
     </div>
