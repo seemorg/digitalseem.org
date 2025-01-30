@@ -1,29 +1,18 @@
-import Container from "@/components/Container";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import { getMetadata, getViewport } from "@/lib/config";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
+import { Roboto, Scheherazade_New } from "next/font/google";
 
-import localFont from "next/font/local";
-
-const calSansFont = localFont({
-  src: "../fonts/CalSans-SemiBold.ttf",
-  variable: "--font-sans",
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "500", "700", "900"],
+  variable: "--font-roboto",
 });
 
-const familyFont = localFont({
-  src: [
-    {
-      path: "../fonts/family-bold.woff2",
-      weight: "700",
-    },
-    {
-      path: "../fonts/family-regular.woff2",
-      weight: "400",
-    },
-  ],
-  variable: "--font-family",
+const scheherazade = Scheherazade_New({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-scheherazade",
 });
 
 export const metadata = getMetadata();
@@ -35,24 +24,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="bg-primary" suppressHydrationWarning>
+    <html lang="en" className="bg-[#F6F6F4]" suppressHydrationWarning>
       <body
-        className={cn("font-family", calSansFont.variable, familyFont.variable)}
+        className={cn(
+          "relative min-h-screen w-full font-sans antialiased",
+          roboto.variable,
+          scheherazade.variable,
+        )}
       >
-        <div
-          className="relative min-h-screen w-full py-16 text-primary-100 antialiased"
-          style={{
-            fontFeatureSettings: '"liga","dlig"',
-          }}
-        >
-          <Container className="text-2xl font-medium leading-normal sm:text-3xl">
-            <Header />
-            <div className="h-20" />
-            {children}
-          </Container>
-
-          <Footer />
-        </div>
+        {children}
       </body>
     </html>
   );

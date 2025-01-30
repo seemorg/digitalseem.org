@@ -15,14 +15,15 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
-        family: ["var(--font-family)", ...fontFamily.serif],
+        sans: ["var(--font-roboto)", ...fontFamily.sans],
+        scheherazade: ["var(--font-scheherazade)", ...fontFamily.serif],
       },
       colors: {
         primary: {
-          DEFAULT: "#AA4A44",
-          100: "#F8E9E8",
+          background: "#C9F905",
+          foreground: "#273E3D",
         },
+        secondary: "#171D1DB2",
       },
       keyframes: {
         "accordion-down": {
@@ -37,6 +38,9 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      screens: {
+        xs: "480px",
       },
     },
   },
