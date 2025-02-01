@@ -1,0 +1,37 @@
+import Container from "@/components/Container";
+import { Button } from "@/components/ui/button";
+
+export default function Transformation() {
+  return (
+    <section className="py-28">
+      <Container>
+        <div className="bg-primary-foreground relative isolate overflow-hidden rounded-3xl p-10 pt-0 text-white sm:p-16">
+          <div className="h-[200px] sm:hidden" />
+
+          <div className="sm:max-w-[60%] md:max-w-[50%]">
+            <h2 className="text-4xl font-bold">
+              Be Part of the Transformation
+            </h2>
+            <p className="mt-3 text-lg">
+              Your support helps us preserve Islamic heritage and create tools
+              that empower researchers globally. Together, we can open new doors
+              for discovery.
+            </p>
+            <div className="mt-8 flex items-center gap-4">
+              <Button>Donate</Button>
+              <Button variant="blur">Learn More</Button>
+            </div>
+          </div>
+
+          <div
+            className="absolute left-0 right-0 top-0 -z-[1] h-[230px] [--bg-angle:180deg] sm:bottom-0 sm:left-[50%] sm:h-auto sm:[--bg-angle:270deg]"
+            style={{
+              background:
+                "linear-gradient(var(--bg-angle), rgba(39, 62, 61, 0.00) 40.26%, #273E3D 100%), url(/images/part-of-the-transformation.jpeg) lightgray 50% / cover no-repeat",
+            }}
+          />
+        </div>
+      </Container>
+    </section>
+  );
+}

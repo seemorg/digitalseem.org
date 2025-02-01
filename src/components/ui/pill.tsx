@@ -6,7 +6,7 @@ export default function Pill({ className, ...props }: PillProps) {
   return (
     <span
       className={cn(
-        "rounded-full bg-primary-100 px-3 py-1 text-sm font-bold text-black",
+        "bg-primary-background text-primary-foreground w-fit rounded-full px-3 py-1.5 font-bold",
         className,
       )}
       {...props}
