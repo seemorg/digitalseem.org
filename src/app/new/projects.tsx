@@ -1,4 +1,4 @@
-import Container from "@/components/container";
+import Container from "@/components/ui/container";
 import BentoCard from "./bento-card";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import Pill from "@/components/ui/pill";

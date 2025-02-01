@@ -1,4 +1,4 @@
-import Footer from "@/components/footer";
+import Footer from "@/components/layout/footer";
 import Hero from "./hero";
 import OurVision from "./our-vision";
 import Projects from "./projects";

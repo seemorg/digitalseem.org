@@ -1,5 +1,5 @@
-import Container from "@/components/container";
-import { Logo } from "@/components/icons";
+import Container from "@/components/ui/container";
+import { Logo } from "@/components/ui/icons";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";

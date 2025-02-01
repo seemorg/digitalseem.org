@@ -1,4 +1,4 @@
-import Container from "@/components/container";
+import Container from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 
 export default function Transformation() {

@@ -1,7 +1,8 @@
 import { getMetadata, getViewport } from "@/lib/config";
 import { cn } from "@/lib/utils";
-import "@/styles/globals.css";
 import { Roboto, Scheherazade_New } from "next/font/google";
+
+import "@/styles/globals.css";
 
 const roboto = Roboto({
   subsets: ["latin"],

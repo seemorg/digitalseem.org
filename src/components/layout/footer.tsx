@@ -1,6 +1,6 @@
-import Container from "./container";
-import { Logo } from "./icons";
-import { Button } from "./ui/button";
+import Container from "../ui/container";
+import { Logo } from "../ui/icons";
+import { Button } from "../ui/button";
 
 const navigation = {
   solutions: [
