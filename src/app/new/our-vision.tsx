@@ -1,4 +1,4 @@
-import Container from "@/components/Container";
+import Container from "@/components/container";
 import Pill from "@/components/ui/pill";
 import { cn } from "@/lib/utils";
 import Image from "next/image";

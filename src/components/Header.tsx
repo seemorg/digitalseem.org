@@ -1,5 +1,5 @@
 import { config } from "@/lib/config";
-import { Logo } from "./Icons";
+import { Logo } from "./icons";
 import { Button } from "./ui/button";
 import Link from "next/link";
 

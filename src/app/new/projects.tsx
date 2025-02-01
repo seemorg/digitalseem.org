@@ -1,6 +1,6 @@
-import Container from "@/components/Container";
+import Container from "@/components/container";
 import BentoCard from "./bento-card";
-import { ChevronRightIcon, PlayIcon } from "@heroicons/react/24/outline";
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import Pill from "@/components/ui/pill";
 import Image from "next/image";
 import { cn } from "@/lib/utils";

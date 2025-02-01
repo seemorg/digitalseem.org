@@ -1,5 +1,5 @@
-import Container from "./Container";
-import { Logo } from "./Icons";
+import Container from "./container";
+import { Logo } from "./icons";
 import { Button } from "./ui/button";
 
 const navigation = {
