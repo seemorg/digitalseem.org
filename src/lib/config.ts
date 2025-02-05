@@ -1,6 +1,6 @@
 import { type Metadata, type Viewport } from "next";
 
-export const config = {
+export const siteConfig = {
   org: "Seemore",
   description:
     "In a world where Islamic Law research is a challenge, Seemore is building tools to make it accessible. A new era where knowledge is within reach, research is efficient, and navigating vast legal texts is seamless.",
@@ -20,25 +20,27 @@ export const config = {
 };
 
 export const getMetadata = ({
-  title: baseTitle = config.org,
-  description = config.description,
+  title: baseTitle = siteConfig.org,
+  description = siteConfig.description,
 }: {
   title?: string;
   description?: string;
 } = {}): Metadata => {
-  const images = [config.image];
+  const images = [siteConfig.image];
   const title =
-    baseTitle === config.org ? baseTitle : `${baseTitle} | ${config.org}`;
+    baseTitle === siteConfig.org
+      ? baseTitle
+      : `${baseTitle} | ${siteConfig.org}`;
 
   return {
     title,
     description,
-    metadataBase: new URL(config.url),
+    metadataBase: new URL(siteConfig.url),
     icons: [{ rel: "icon", url: "/favicon.ico" }],
     openGraph: {
       type: "website",
-      siteName: config.org,
-      locale: config.locale,
+      siteName: siteConfig.org,
+      locale: siteConfig.locale,
       url: "/",
       title,
       description,
@@ -72,6 +74,6 @@ export const getViewport = (): Viewport => {
     width: "device-width",
     initialScale: 1,
     viewportFit: "cover",
-    themeColor: config.themeColor,
+    themeColor: siteConfig.themeColor,
   };
 };

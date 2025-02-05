@@ -1,3 +1,6 @@
+import Footer from "@/components/layout/footer";
+import Navbar from "@/components/layout/navbar";
+import Container from "@/components/ui/container";
 import Pill from "@/components/ui/pill";
 import { getMetadata } from "@/lib/config";
 import { CAREERS_PAGE_REVALIDATE } from "@/lib/constants";
@@ -60,59 +63,77 @@ export default async function CareerPage(props: PageProps) {
 
   const [title, description, mission, content, salary, application] =
     await Promise.all([
-      titleMd ? compileMarkdown(titleMd) : null,
-      descriptionMd ? compileMarkdown(descriptionMd) : null,
-      missionMd ? compileMarkdown(missionMd) : null,
+      titleMd ? compileMarkdown(titleMd, false) : null,
+      descriptionMd ? compileMarkdown(descriptionMd, false) : null,
+      missionMd ? compileMarkdown(missionMd, false) : null,
       contentMd ? compileMarkdown(contentMd) : null,
       salaryMd ? compileMarkdown(salaryMd) : null,
       applicationMd ? compileMarkdown(applicationMd) : null,
     ]);
 
   return (
-    <div className="min-h-[50vh]">
-      <h1 className="text-4xl font-bold">{title}</h1>
+    <>
+      <Navbar />
 
-      {/* eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing */}
-      {(career.type || career.location) && (
-        <div className="mt-5 flex items-center gap-2">
-          {career.type && <Pill>{career.type}</Pill>}
-          {career.location && <Pill>{career.location}</Pill>}
-        </div>
-      )}
+      <Container className="max-w-4xl py-12">
+        <h1 className="text-5xl font-bold text-primary-foreground">{title}</h1>
+        {description && <p className="mt-2 text-secondary">{description}</p>}
 
-      {/* eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing */}
-      {(description || mission) && (
-        <div className="mt-10 flex flex-col gap-6">
-          {description && <div className="text-lg">{description}</div>}
+        {/* eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing */}
+        {(career.type || career.location) && (
+          <div className="mt-4 flex items-center gap-4">
+            {career.type && (
+              <Pill variant="secondary" className="px-5 py-2 font-normal">
+                {career.type}
+              </Pill>
+            )}
+            {career.location && (
+              <Pill variant="secondary" className="px-5 py-2 font-normal">
+                {career.location}
+              </Pill>
+            )}
+          </div>
+        )}
 
-          {mission && (
-            <div>
-              <h2 className="text-2xl font-bold text-white">Our Mission</h2>
-              <div className="mt-2 text-lg">{mission}</div>
+        {mission && (
+          <div className="mt-12">
+            <h3 className="text-2xl font-semibold text-primary-foreground">
+              Our Mission
+            </h3>
+
+            <p className="mt-2 text-secondary">{mission}</p>
+          </div>
+        )}
+
+        <div className="mt-12">
+          <h3 className="text-2xl font-semibold text-primary-foreground">
+            Job Description
+          </h3>
+
+          <div className="mt-6 rounded-2xl bg-white p-8">
+            <div className="prose prose-lg max-w-full prose-headings:mb-2 prose-headings:text-primary-foreground prose-p:mb-2 prose-p:text-secondary prose-ul:mt-0 prose-ul:list-none prose-ul:pl-4 prose-li:text-secondary">
+              {content}
+
+              {salary && (
+                <div>
+                  <h2>Salary</h2>
+                  {salary}
+                </div>
+              )}
+
+              {application && (
+                <div>
+                  <h2>Application</h2>
+
+                  {application}
+                </div>
+              )}
             </div>
-          )}
+          </div>
         </div>
-      )}
+      </Container>
 
-      {content && (
-        <div className="prose-p:text-primary-100 prose-li:text-primary-100 prose prose-lg prose-invert mt-14 max-w-full prose-headings:mb-2 prose-p:mb-2 prose-ul:mt-0 prose-ul:list-none">
-          {content}
-        </div>
-      )}
-
-      {salary && (
-        <>
-          <h2 className="mt-16 text-2xl font-bold text-white">Salary</h2>
-          <div className="mt-2 text-lg">{salary}</div>
-        </>
-      )}
-
-      {application && (
-        <>
-          <h2 className="mt-16 text-2xl font-bold text-white">Application</h2>
-          <div className="mt-2 text-lg">{application}</div>
-        </>
-      )}
-    </div>
+      <Footer />
+    </>
   );
 }
