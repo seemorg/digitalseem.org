@@ -1,9 +1,5 @@
-"use client";
-
 import Container from "@/components/ui/container";
 import {
-  type CarouselApi,
-  Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
@@ -12,7 +8,7 @@ import {
 import Pill from "@/components/ui/pill";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import TeamCarousel from "./team-carousel.client";
 
 const team = [
   {
@@ -88,23 +84,6 @@ const team = [
 ];
 
 export default function Team() {
-  const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!api) {
-      return;
-    }
-
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap() + 1);
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
-  }, [api]);
-
   return (
     <section className="py-28">
       <Container>
@@ -121,11 +100,7 @@ export default function Team() {
           </p>
         </div>
 
-        <Carousel
-          className="relative mt-12"
-          orientation="horizontal"
-          setApi={setApi}
-        >
+        <TeamCarousel>
           <CarouselPrevious
             className="-left-5 z-10 hidden bg-white text-primary-foreground hover:bg-white/80 disabled:pointer-events-none disabled:opacity-0 sm:flex"
             variant="default"
@@ -169,21 +144,7 @@ export default function Team() {
               </CarouselItem>
             ))}
           </CarouselContent>
-
-          <div className="mt-12 flex items-center justify-center gap-4 sm:hidden">
-            {new Array(count).fill(null).map((_, idx) => (
-              <span
-                key={idx}
-                className={cn(
-                  "h-2 w-2 rounded-full",
-                  current === idx + 1
-                    ? "bg-primary-foreground"
-                    : "bg-primary-foreground/25",
-                )}
-              />
-            ))}
-          </div>
-        </Carousel>
+        </TeamCarousel>
       </Container>
     </section>
   );

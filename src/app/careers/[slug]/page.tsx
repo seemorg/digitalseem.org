@@ -8,13 +8,16 @@ import { notFound } from "next/navigation";
 export const revalidate = CAREERS_PAGE_REVALIDATE;
 export const dynamicParams = true; // Allow params that are not statically known at build time
 
-interface PageProps {
-  params: {
-    slug: string;
-  };
+interface Params {
+  slug: string;
 }
 
-export async function generateMetadata({ params }: PageProps) {
+interface PageProps {
+  params: Promise<Params>;
+}
+
+export async function generateMetadata(props: PageProps) {
+  const params = await props.params;
   const { jobs, description } = await getOpenCareers();
   const career = jobs.find((job) => job.slug === params.slug);
 
@@ -23,7 +26,7 @@ export async function generateMetadata({ params }: PageProps) {
   return getMetadata({ title: career.title, description });
 }
 
-export async function generateStaticParams(): Promise<PageProps[]> {
+export async function generateStaticParams(): Promise<{ params: Params }[]> {
   const careers = await getOpenCareers();
 
   return careers.jobs.map((job) => ({
@@ -33,7 +36,10 @@ export async function generateStaticParams(): Promise<PageProps[]> {
   }));
 }
 
-export default async function CareerPage({ params: { slug } }: PageProps) {
+export default async function CareerPage(props: PageProps) {
+  const params = await props.params;
+  const { slug } = params;
+
   const {
     jobs,
     description: descriptionMd,
@@ -89,7 +95,7 @@ export default async function CareerPage({ params: { slug } }: PageProps) {
       )}
 
       {content && (
-        <div className="prose prose-lg prose-invert mt-14 max-w-full prose-headings:mb-2 prose-p:mb-2 prose-p:text-primary-100 prose-ul:mt-0 prose-ul:list-none prose-li:text-primary-100">
+        <div className="prose-p:text-primary-100 prose-li:text-primary-100 prose prose-lg prose-invert mt-14 max-w-full prose-headings:mb-2 prose-p:mb-2 prose-ul:mt-0 prose-ul:list-none">
           {content}
         </div>
       )}
