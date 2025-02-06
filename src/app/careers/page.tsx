@@ -2,7 +2,6 @@ import { getOpenCareers } from "@/lib/notion";
 import Link from "next/link";
 import Pill from "@/components/ui/pill";
 import { getMetadata } from "@/lib/config";
-import { CAREERS_PAGE_REVALIDATE } from "@/lib/constants";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import Container from "@/components/ui/container";
@@ -10,7 +9,7 @@ import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import { compileMarkdown } from "@/lib/md";
 // import Faqs from "./faqs";
 
-export const revalidate = CAREERS_PAGE_REVALIDATE;
+export const revalidate = 1200; // 20 mins
 
 export async function generateMetadata() {
   const { description: careersDescription } = await getOpenCareers();

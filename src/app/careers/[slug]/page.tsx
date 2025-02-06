@@ -3,12 +3,11 @@ import Navbar from "@/components/layout/navbar";
 import Container from "@/components/ui/container";
 import Pill from "@/components/ui/pill";
 import { getMetadata } from "@/lib/config";
-import { CAREERS_PAGE_REVALIDATE } from "@/lib/constants";
 import { compileMarkdown } from "@/lib/md";
 import { getOpenCareers } from "@/lib/notion";
 import { notFound } from "next/navigation";
 
-export const revalidate = CAREERS_PAGE_REVALIDATE;
+export const revalidate = 1200; // 20 mins
 export const dynamicParams = true; // Allow params that are not statically known at build time
 
 interface Params {

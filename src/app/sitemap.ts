@@ -1,10 +1,9 @@
 import { siteConfig } from "@/lib/config";
-import { CAREERS_PAGE_REVALIDATE } from "@/lib/constants";
 import { getOpenCareers } from "@/lib/notion";
 
 const routes = ["/", "/careers"];
 
-export const revalidate = CAREERS_PAGE_REVALIDATE;
+export const revalidate = 1200; // 20 mins
 
 export default async function sitemap() {
   const entries = routes.map((route) => ({
