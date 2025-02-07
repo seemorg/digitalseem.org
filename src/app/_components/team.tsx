@@ -12,6 +12,27 @@ import TeamCarousel from "./team-carousel.client";
 
 const team = [
   {
+    name: "Adnan Zulfiqar",
+    title: "Board Member",
+    description:
+      "Adnan specializes in Islamic and criminal law. He drafted criminal codes for Maldives and Somalia.",
+    image: "/images/team/adnan.png",
+  },
+  {
+    name: "Intisar Rabb",
+    title: "Board Member",
+    description:
+      "Intisar is a Law professor at Harvard. She leads SHARIAsource and the Program in Islamic Law.",
+    image: "/images/team/intisar.png",
+  },
+  {
+    name: "Zeki Mokhtarzada",
+    title: "Board Member",
+    description:
+      "Zeki is an entrepreneur with deep technical expertise. He co-founded Freewebs and Truebill.",
+    image: "/images/team/zeki.png",
+  },
+  {
     name: "Abdellatif Abdelfattah",
     title: "CEO",
     description:
@@ -22,7 +43,7 @@ const team = [
     name: "Mohamed Lamine",
     title: "Head of Design",
     description:
-      "Lamine is a designer with a passion for creating user-friendly and intuitive designs.",
+      "Mohamed was the design lead at Thmanyah, he consults with startups to build 0 to 1 products",
     image: "/images/team/lamine.png",
   },
   {
@@ -59,28 +80,7 @@ const team = [
     description:
       "Ahmed holds a PhD. from Al-Azhar university. He leads the digitization team and efforts.",
     image: "/images/team/ahmed-aktan.png",
-  },
-  {
-    name: "Adnan Zulfiqar",
-    title: "Board Member",
-    description:
-      "Adnan specializes in Islamic and criminal law. He drafted criminal codes for Maldives and Somalia.",
-    image: "/images/team/adnan.png",
-  },
-  {
-    name: "Intisar Rabb",
-    title: "Board Member",
-    description:
-      "Intisar is a Law professor at Harvard. She leads SHARIAsource and the Program in Islamic Law.",
-    image: "/images/team/intisar.png",
-  },
-  {
-    name: "Zeki Mokhtarzada",
-    title: "Board Member",
-    description:
-      "Zeki is an entrepreneur with deep technical expertise. He co-founded Freewebs and Truebill.",
-    image: "/images/team/zeki.png",
-  },
+  }
 ];
 
 export default function Team() {
@@ -90,13 +90,12 @@ export default function Team() {
         <Pill>Team</Pill>
         <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <h2 className="max-w-md text-5xl font-bold text-primary-foreground">
-            Meet the Experts Behind the Mission
+            Meet the Team Behind our Mission
           </h2>
 
           <p className="max-w-lg text-lg text-secondary md:border-l-2 md:border-primary-background md:pl-6">
-            Our team of experts from Harvard, UPenn, and Quran.com is bridging
-            tradition and technology to make Islamic knowledge accessible
-            worldwide.
+            {/* Our team comes from Harvard, UPenn, Twitter, and Quran.com. We&apos;re working at the intersection of technology and Islamic research. Join our team. */}
+            We&apos;re a group of technologists and scholars bringing expertise from Harvard, UPenn, Twitter, and Quran.com working at the intersection of AI and Islamic research.
           </p>
         </div>
 

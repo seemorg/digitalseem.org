@@ -97,8 +97,8 @@ export default function Footer() {
   return (
     <footer className="mt-8 sm:mt-12 lg:mt-16">
       <Container>
-        <div className="border-secondary/10 border-t pb-8 pt-8 sm:pt-12 lg:pt-16">
-          <div className="text-primary-foreground xl:grid xl:grid-cols-3 xl:gap-8">
+        <div className="border-secondary/10  pb-8 pt-8 sm:pt-12 lg:pt-16">
+          {/* <div className="text-primary-foreground xl:grid xl:grid-cols-3 xl:gap-8">
             <Logo className="h-9" />
 
             <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
@@ -175,15 +175,14 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="border-secondary/10 mt-16 border-t pt-8 sm:mt-20 lg:mt-24 lg:flex lg:items-center lg:justify-between">
             <div>
               <h3 className="text-sm/6 font-semibold text-gray-900">
                 Subscribe to our newsletter
               </h3>
               <p className="mt-2 text-sm/6 text-gray-600">
-                The latest news, articles, and resources, sent to your inbox
-                weekly.
+                Receive updates when we have announcements. No spam ever. 
               </p>
             </div>
             <form className="mt-6 sm:flex sm:max-w-md lg:mt-0">
@@ -209,7 +208,7 @@ export default function Footer() {
           </div>
           <div className="border-secondary/10 mt-8 border-t pt-8 md:flex md:items-center md:justify-between">
             <div className="flex gap-x-6 md:order-2">
-              {navigation.social.map((item) => (
+              {/* {navigation.social.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
@@ -218,11 +217,14 @@ export default function Footer() {
                   <span className="sr-only">{item.name}</span>
                   <item.icon aria-hidden="true" className="size-6" />
                 </a>
-              ))}
+              ))} */}
+              {/* mailto: contact@digitalseem.org */}
+              <a href="mailto:contact@digitalseem.org" className="text-secondary hover:text-gray-800">
+                contact@digitalseem.org
+              </a>
             </div>
             <p className="text-secondary mt-8 text-sm/6 md:order-1 md:mt-0">
-              Seemore is a registered 501(c)3 non-profit dedicated to advancing
-              the accessibility of Islamic law research.
+              Seemore Foundation is a 501(c)3 pending non-profit.
             </p>
           </div>
         </div>

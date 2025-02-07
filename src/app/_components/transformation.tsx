@@ -10,16 +10,14 @@ export default function Transformation() {
 
           <div className="sm:max-w-[60%] md:max-w-[50%]">
             <h2 className="text-4xl font-bold">
-              Be Part of the Transformation
+              Be an Early Supporter
             </h2>
             <p className="mt-3 text-lg">
-              Your support helps us preserve Islamic heritage and create tools
-              that empower researchers globally. Together, we can open new doors
-              for discovery.
+              Your support helps us build the foundation of Islamic knowledge in an AI-first world. We&apos;re working to ensure that the tradition doesn&apos;t get left behind.
             </p>
             <div className="mt-8 flex items-center gap-4">
-              <Button>Donate</Button>
-              <Button variant="blur">Learn More</Button>
+              <Button>Get in Touch</Button>
+              <Button variant="blur">Donate</Button>
             </div>
           </div>
 

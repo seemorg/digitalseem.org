@@ -46,7 +46,7 @@ export default function Navbar({
 
         <div className="flex flex-1 items-center justify-end gap-4 font-bold">
           <Button variant={variant === "overlay" ? "blur" : "outline"}>
-            Donate
+            Contact
           </Button>
           <Button className="hidden sm:flex">Projects</Button>
           <Button
