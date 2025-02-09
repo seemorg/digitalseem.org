@@ -99,7 +99,7 @@ export default function Projects() {
             </h3>
 
             <p className="mt-6 text-lg text-secondary">
-              Working with shcolars to identify the most important works in each Islamic disclipline. We make sure that these texts are digitally accessible and have the correct metadata.
+              Working with scholars to identify the most important works in each Islamic disclipline. We make sure that these texts are digitally accessible and have the correct metadata.
             </p>
 
             <a
