@@ -80,7 +80,7 @@ const team = [
     description:
       "Ahmed holds a PhD. from Al-Azhar university. He leads the digitization team and efforts.",
     image: "/images/team/ahmed-aktan.png",
-  }
+  },
 ];
 
 export default function Team() {
@@ -93,9 +93,11 @@ export default function Team() {
             Meet the Team Behind our Mission
           </h2>
 
-          <p className="max-w-lg text-lg text-secondary md:border-l-2 md:border-primary-background md:pl-6">
+          <p className="max-w-lg text-lg text-secondary">
             {/* Our team comes from Harvard, UPenn, Twitter, and Quran.com. We&apos;re working at the intersection of technology and Islamic research. Join our team. */}
-            We&apos;re a group of technologists and scholars bringing expertise from Harvard, UPenn, Twitter, and Quran.com working at the intersection of AI and Islamic research.
+            We&apos;re a group of technologists and scholars bringing expertise
+            from Harvard, UPenn, Twitter, and Quran.com working at the
+            intersection of AI and Islamic research.
           </p>
         </div>
 

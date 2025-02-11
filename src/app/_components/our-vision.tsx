@@ -19,7 +19,6 @@ const vision = [
   //   description:
   //     "Researching Islamic texts is time-consuming and relies on primitive tooling. We're adopting state-of-the-art AI tools to make research faster, easier, and more insightful.",
   // },
-
 ];
 
 export default function OurVision() {
@@ -27,7 +26,7 @@ export default function OurVision() {
     <section id="about" className="py-28">
       <Container>
         <div className="relative px-8 pt-10">
-          <div className="absolute bottom-0 left-0 right-0 top-[60%] isolate -z-[1] overflow-hidden rounded-b-3xl sm:top-[40%]">
+          <div className="absolute bottom-0 left-0 right-0 top-[60%] isolate -z-[1] overflow-hidden rounded-b-3xl sm:top-[10%]">
             <Image
               src="/images/vision.png"
               alt="Vision"
@@ -36,7 +35,12 @@ export default function OurVision() {
             />
 
             {/* linear gradient */}
-            <div className="-z-[1] h-full w-full bg-gradient-to-b from-[#F6F6F4] to-transparent" />
+            <div
+              className="-z-[1] h-full w-full"
+              style={{
+                background: `linear-gradient(360deg, rgba(246, 246, 244, 0) 0%, #F6F6F4 72.29%)`,
+              }}
+            />
           </div>
 
           <Pill>Our Vision</Pill>
@@ -52,28 +56,23 @@ export default function OurVision() {
               <h2 className="text-5xl font-bold text-primary-foreground">
                 Unlocking the Past, Shaping the Future
               </h2>
-              
-              
+
               <p className="mt-6 text-lg text-secondary">
-                Digitizing centuries of knowledge and building for an AI-first future
+                Digitizing centuries of knowledge and building for an AI-first
+                future
               </p>
             </div>
 
-            <ul className="flex-1">
-              {vision.map((item, idx) => (
-                <li
-                  key={item.title}
-                  className={cn(
-                    "pb-4",
-                    idx !== vision.length - 1 && "border-b border-secondary/10",
-                    idx !== 0 && "pt-4",
-                  )}
-                >
+            <ul className="flex flex-1 flex-col gap-12">
+              {vision.map((item) => (
+                <li key={item.title}>
                   <h3 className="text-xl font-semibold text-primary-foreground">
                     {item.title}
                   </h3>
 
-                  <p className="text-lg text-secondary">{item.description}</p>
+                  <p className="mt-2 text-lg text-secondary/70">
+                    {item.description}
+                  </p>
                 </li>
               ))}
             </ul>

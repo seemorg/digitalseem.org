@@ -176,13 +176,13 @@ export default function Footer() {
               </div>
             </div>
           </div> */}
-          <div className="border-secondary/10 mt-16 border-t pt-8 sm:mt-20 lg:mt-24 lg:flex lg:items-center lg:justify-between">
+          <div className="border-t border-secondary/10 pt-8 lg:flex lg:items-center lg:justify-between">
             <div>
               <h3 className="text-sm/6 font-semibold text-gray-900">
                 Subscribe to our newsletter
               </h3>
               <p className="mt-2 text-sm/6 text-gray-600">
-                Receive updates when we have announcements. No spam ever. 
+                Receive updates when we have announcements. No spam ever.
               </p>
             </div>
             <form className="mt-6 sm:flex sm:max-w-md lg:mt-0">
@@ -196,7 +196,7 @@ export default function Footer() {
                 required
                 placeholder="Enter your email"
                 autoComplete="email"
-                className="focus:outline-primary-foreground w-full min-w-0 rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 sm:w-56 sm:text-sm/6"
+                className="w-full min-w-0 rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-primary-foreground sm:w-56 sm:text-sm/6"
               />
 
               <div className="mt-4 sm:ml-4 sm:mt-0 sm:shrink-0">
@@ -206,7 +206,7 @@ export default function Footer() {
               </div>
             </form>
           </div>
-          <div className="border-secondary/10 mt-8 border-t pt-8 md:flex md:items-center md:justify-between">
+          <div className="mt-8 border-t border-secondary/10 pt-8 md:flex md:items-center md:justify-between">
             <div className="flex gap-x-6 md:order-2">
               {/* {navigation.social.map((item) => (
                 <a
@@ -219,11 +219,14 @@ export default function Footer() {
                 </a>
               ))} */}
               {/* mailto: contact@digitalseem.org */}
-              <a href="mailto:contact@digitalseem.org" className="text-secondary hover:text-gray-800">
+              <a
+                href="mailto:contact@digitalseem.org"
+                className="text-secondary hover:text-gray-800"
+              >
                 contact@digitalseem.org
               </a>
             </div>
-            <p className="text-secondary mt-8 text-sm/6 md:order-1 md:mt-0">
+            <p className="mt-8 text-sm/6 text-secondary md:order-1 md:mt-0">
               Seemore Foundation is a 501(c)3 pending non-profit.
             </p>
           </div>

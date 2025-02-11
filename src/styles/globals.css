@@ -14,3 +14,7 @@
   content: "—";
   @apply left-0 mr-2 w-auto opacity-50;
 }
+
+html {
+  scroll-behavior: smooth;
+}
