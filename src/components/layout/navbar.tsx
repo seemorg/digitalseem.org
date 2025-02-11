@@ -50,7 +50,6 @@ export default function Navbar({
           <Button variant={variant === "overlay" ? "blur" : "outline"}>
             Donate
           </Button>
-          <Button className="hidden sm:flex">Projects</Button>
 
           <Button
             size="icon"
