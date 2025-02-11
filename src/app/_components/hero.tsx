@@ -20,14 +20,13 @@ export default function Hero() {
       <Navbar variant="overlay" />
 
       <div className="flex max-w-xl flex-col items-center text-white">
-        <Logo className="w-32" />
+        <Logo className="w-16" />
         <h1 className="mt-6 text-center font-scheherazade text-6xl font-bold">
-          New Era in Islamic Law Research
+          The Future of Islamic Knowledge
         </h1>
-
-        <p className="mt-6 max-w-sm text-center">
-          Preserving centuries of wisdom and transforming the way researchers
-          access Islamic Law.
+        <p className="mt-6 max-w-[460px] text-center">
+          We&apos;re an applied research lab pioneering Islamic knowledge access
+          through cutting-edge AI
         </p>
 
         <div className="mt-6 flex items-center gap-4 font-bold">

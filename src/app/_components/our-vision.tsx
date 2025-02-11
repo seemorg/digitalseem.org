@@ -5,20 +5,21 @@ import Image from "next/image";
 
 const vision = [
   {
-    title: "Preserve",
+    title: "Digitization",
     description:
-      "Digitizing centuries-old Islamic texts to safeguard invaluable knowledge for generations to come.",
+      "The majority of Islamic texts are in non-machine readable formats like scanned PDFs. AIs cannot process or search these texts. We're building the infrastructure to digitize them at scale.",
   },
   {
-    title: "Empower",
+    title: "Agents",
     description:
-      "Equipping researchers with cutting-edge tools to make their work faster, easier, and more insightful.",
+      "Researching Islamic texts is time-consuming and relies on primitive tooling. We're adopting state-of-the-art AI tools to make research faster, easier, and more insightful.",
   },
-  {
-    title: "Connect",
-    description:
-      "Bridging the gap between tradition and innovation by making this rich heritage accessible to a global audience.",
-  },
+  // {
+  //   title: "Accessibility",
+  //   description:
+  //     "Researching Islamic texts is time-consuming and relies on primitive tooling. We're adopting state-of-the-art AI tools to make research faster, easier, and more insightful.",
+  // },
+
 ];
 
 export default function OurVision() {
@@ -42,11 +43,19 @@ export default function OurVision() {
 
           <div className="mt-6 flex flex-col gap-16 sm:flex-row">
             <div className="flex-1">
+              {/* <h2 className="text-5xl font-bold text-primary-foreground">
+                Bring centuries of Islamic knowledge to the AI age.
+              </h2> */}
+              {/* <h2 className="text-5xl font-bold text-primary-foreground">
+                Put Islamic knowledge at the forefront of the AI revolution
+              </h2> */}
               <h2 className="text-5xl font-bold text-primary-foreground">
                 Unlocking the Past, Shaping the Future
               </h2>
+              
+              
               <p className="mt-6 text-lg text-secondary">
-                Our vision is built on three transformative pillars
+                Digitizing centuries of knowledge and building for an AI-first future
               </p>
             </div>
 
