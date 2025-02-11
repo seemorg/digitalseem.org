@@ -81,7 +81,7 @@ export default function Projects() {
               </p>
             </div>
 
-            <div className="h-[200px] xs:h-[250px] md:h-[280px] lg:hidden" />
+            <div className="h-[250px] xs:h-[330px] md:h-[280px] lg:hidden" />
 
             <Image
               src="/images/ocr.png"
@@ -90,8 +90,7 @@ export default function Projects() {
               height={334}
               quality={100}
               className={cn(
-                "absolute top-1/2 -translate-y-1/2 object-contain",
-                "right-0",
+                "absolute bottom-3 right-0 h-[220px] w-auto object-contain xs:h-[300px] lg:bottom-1/2 lg:top-1/2 lg:w-full lg:-translate-y-1/2",
               )}
             />
           </BentoCard>

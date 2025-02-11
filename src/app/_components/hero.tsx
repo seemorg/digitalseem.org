@@ -1,8 +1,18 @@
-import { Logo } from "@/components/ui/icons";
 import { Button } from "@/components/ui/button";
-import { PlayIcon } from "@heroicons/react/24/outline";
+import { PlayCircleIcon, PlayIcon } from "@heroicons/react/24/outline";
 import Navbar from "@/components/layout/navbar";
 import Image from "next/image";
+import {
+  VideoModal,
+  VideoModalContent,
+  VideoModalDescription,
+  VideoModalTitle,
+  VideoModalTrigger,
+  VideoModalVideo,
+  VideoPlayButton,
+  VideoPlayer,
+  VideoPreview,
+} from "@/components/ui/video-modal";
 
 export default function Hero() {
   return (
@@ -14,8 +24,6 @@ export default function Hero() {
         className="absolute inset-0 -z-[2] w-full object-cover"
       />
 
-      {/* <div className="absolute inset-0 -z-[2] bg-[#273E3D] opacity-60" /> */}
-      {/* <div className="absolute inset-0 -z-[1] bg-gradient-to-b from-transparent to-black " /> */}
       <div
         className="absolute inset-0 -z-[1] bg-blend-color"
         style={{
@@ -24,8 +32,7 @@ export default function Hero() {
             rgba(31, 49, 48, 0) 0%, 
             rgba(31, 49, 48, 0.5) 60%, 
             rgba(31, 49, 48, 1) 100%
-          ), 
-          rgba(39, 62, 61, 0.5)`,
+          )`,
         }}
       />
 
@@ -44,10 +51,45 @@ export default function Hero() {
 
           <div className="mt-6 flex items-center gap-4 font-bold">
             <Button className="h-11 px-6 py-3 font-bold">Our Projects</Button>
-            <Button variant="blur" className="h-11 gap-1 px-6 py-3 font-bold">
-              <PlayIcon className="h-5 w-5" />
-              Video
-            </Button>
+
+            <VideoModal>
+              <VideoModalTrigger asChild>
+                <Button
+                  variant="blur"
+                  className="h-11 gap-1 px-6 py-3 font-bold"
+                >
+                  <PlayIcon className="h-5 w-5" />
+                  Video
+                </Button>
+              </VideoModalTrigger>
+              <VideoModalContent>
+                <VideoModalTitle>Modal Video Demo</VideoModalTitle>
+                <VideoModalDescription>
+                  Your subtitle or description here
+                </VideoModalDescription>
+                <VideoModalVideo>
+                  <VideoPlayer>
+                    <VideoPreview>
+                      <img
+                        src="https://cdn.dribbble.com/userupload/4145843/file/original-c7a2c9a768450460259f232259d103d2.png?resize=1600x1200"
+                        alt="Video preview"
+                      />
+                    </VideoPreview>
+                    <VideoPlayButton>
+                      <button className="absolute inset-0 m-auto flex size-32 items-center justify-center rounded-full border border-white border-white/10 bg-white/50 transition duration-300 hover:bg-white/75">
+                        <PlayCircleIcon className="size-20 stroke-1 text-white" />
+                      </button>
+                    </VideoPlayButton>
+                    <iframe
+                      className="size-full"
+                      src="https://cdn.magicui.design/globe.mp4"
+                      allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                      allowFullScreen
+                    />
+                  </VideoPlayer>
+                </VideoModalVideo>
+              </VideoModalContent>
+            </VideoModal>
           </div>
         </div>
 

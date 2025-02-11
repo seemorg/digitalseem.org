@@ -42,10 +42,20 @@ const config = {
             height: "0",
           },
         },
+        "modal-fade-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        "modal-fade-out": {
+          "0%": { opacity: "1" },
+          "100%": { opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "modal-fade-in": "modal-fade-in 0.15s ease-out",
+        "modal-fade-out": "modal-fade-out 0.15s ease-out",
       },
       screens: {
         xs: "480px",
