@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 export default function Projects() {
   return (
-    <section className="py-28">
+    <section id="projects" className="py-28">
       <Container>
         <Pill>Our Projects</Pill>
         <h2 className="mt-6 text-5xl font-bold text-primary-foreground">

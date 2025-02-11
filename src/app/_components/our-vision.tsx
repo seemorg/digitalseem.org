@@ -23,7 +23,7 @@ const vision = [
 
 export default function OurVision() {
   return (
-    <section className="py-28">
+    <section id="about" className="py-28">
       <Container>
         <div className="relative px-8 pt-10">
           <div className="absolute bottom-0 left-0 right-0 top-[60%] isolate -z-[1] overflow-hidden rounded-b-3xl sm:top-[40%]">

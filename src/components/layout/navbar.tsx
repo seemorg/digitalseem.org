@@ -25,22 +25,24 @@ export default function Navbar({
       }
     >
       <Container className="flex items-center justify-between border-b border-white/10 py-4">
-        <div className="flex flex-1 items-center gap-2">
-          <Logo className="w-8" />
-          <span>
-            <strong>Seemore</strong> Foundation
-          </span>
+        <div className="flex-1">
+          <Link href="/" className="flex items-center gap-2">
+            <Logo className="w-8" />
+            <span>
+              <strong>Seemore</strong> Foundation
+            </span>
+          </Link>
         </div>
 
         <ul className="hidden flex-1 items-center justify-center gap-8 sm:flex">
           <li>
-            <Link href="/">Home</Link>
+            <Link href="/#about">About</Link>
           </li>
           <li>
-            <Link href="/">About</Link>
+            <Link href="/#projects">Projects</Link>
           </li>
           <li>
-            <Link href="/">Projects</Link>
+            <Link href="/careers">Careers</Link>
           </li>
         </ul>
 
@@ -49,6 +51,7 @@ export default function Navbar({
             Donate
           </Button>
           <Button className="hidden sm:flex">Projects</Button>
+
           <Button
             size="icon"
             variant={variant === "overlay" ? "blur" : "outline"}
