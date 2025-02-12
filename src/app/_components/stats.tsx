@@ -13,11 +13,10 @@ export default function Stats() {
   return (
     <section className="py-20">
       <Container className="flex flex-wrap justify-between gap-10">
-        <Stat value="Nonprofit Committed" label="501(c)(3) pending" />
-        <Stat value="Houston" label="State" />
+        <Stat value="Registered Non-Profit" label="501(c)3 status pending" />
         <Stat value="2021" label="Year Founded" />
-        <Stat value="51" label="Team Members" />
-        <Stat value="32M" label="Total Funding" />
+        <Stat value="100,000+" label="Users" />
+        <Stat value="142+" label="Countries" />
       </Container>
     </section>
   );
