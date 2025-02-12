@@ -65,15 +65,15 @@ export default function Hero() {
                 </Button>
               </VideoModalTrigger>
               <VideoModalContent>
-                <VideoModalTitle>Modal Video Demo</VideoModalTitle>
+                <VideoModalTitle>Seemore Foundation Overview</VideoModalTitle>
                 <VideoModalDescription>
-                  Your subtitle or description here
+                  A word from our CEO
                 </VideoModalDescription>
                 <VideoModalVideo>
                   <VideoPlayer>
                     <VideoPreview>
                       <img
-                        src="https://cdn.dribbble.com/userupload/4145843/file/original-c7a2c9a768450460259f232259d103d2.png?resize=1600x1200"
+                        src="https://assets.digitalseem.org/seemore%20landing%20image.png"
                         alt="Video preview"
                       />
                     </VideoPreview>
@@ -84,7 +84,7 @@ export default function Hero() {
                     </VideoPlayButton>
                     <iframe
                       className="size-full"
-                      src="https://cdn.magicui.design/globe.mp4"
+                      src="https://assets.digitalseem.org/Seemore%20Landing%20Website.mp4"
                       allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
                       allowFullScreen
                     />
