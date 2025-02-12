@@ -3,9 +3,9 @@ import { type Metadata, type Viewport } from "next";
 const contactEmail = "contact@digitalseem.org";
 
 export const siteConfig = {
-  org: "Seemore",
+  org: "Seemore Foundation",
   description:
-    "In a world where Islamic Law research is a challenge, Seemore is building tools to make it accessible. A new era where knowledge is within reach, research is efficient, and navigating vast legal texts is seamless.",
+    "We're an applied research lab pioneering Islamic knowledge access through cutting-edge AI and the team behind Usul AI.",
   contact: {
     email: contactEmail,
     mailto: `mailto:${contactEmail}`,

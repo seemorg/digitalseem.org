@@ -65,15 +65,15 @@ export default function Hero() {
                 </Button>
               </VideoModalTrigger>
               <VideoModalContent>
-                <VideoModalTitle>Modal Video Demo</VideoModalTitle>
+                <VideoModalTitle>Seemore Foundation Overview</VideoModalTitle>
                 <VideoModalDescription>
-                  Your subtitle or description here
+                  A word from our CEO
                 </VideoModalDescription>
                 <VideoModalVideo>
                   <VideoPlayer>
                     <VideoPreview>
                       <img
-                        src="https://cdn.dribbble.com/userupload/4145843/file/original-c7a2c9a768450460259f232259d103d2.png?resize=1600x1200"
+                        src="https://assets.digitalseem.org/seemore%20landing%20image.png"
                         alt="Video preview"
                       />
                     </VideoPreview>
@@ -84,7 +84,7 @@ export default function Hero() {
                     </VideoPlayButton>
                     <iframe
                       className="size-full"
-                      src="https://cdn.magicui.design/globe.mp4"
+                      src="https://assets.digitalseem.org/Seemore%20Landing%20Website.mp4"
                       allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
                       allowFullScreen
                     />
@@ -96,19 +96,15 @@ export default function Hero() {
         </div>
 
         <div className="mx-auto mt-[150px] flex max-w-4xl flex-col gap-6 pb-[60px] sm:mt-[200px] sm:pb-[120px]">
-          <h3 className="text-2xl font-bold">Reimagining Islamic Research</h3>
+          <h3 className="text-2xl font-bold">Building for The AI Age</h3>
           <p>
-            Seemorg Foundation is a nonprofit dedicated to advancing Islamic
-            scholarship through AI. Founded in 2020, we are driven by a mission
-            to make deep research more accessible, intuitive, and insightful.
-            Our work isn’t just about automation, it’s about amplifying human
-            intellect, bridging the past and future of knowledge.
+            We’re transitioning into an AI-first world. Islamic Knowledge is not ready for the transition. AIs cannot process the majority of the Islamic texts today because they’re in non-machine readable formats such as scanned PDFs, or in some cases, only available in physical copies. Texts often lack the required metadata or proper cataloging needed for AIs to to retrieve and access them. To have a future where Islamic knowledge is at the forefront of the AI revolution, we need resources a full-time team tackling this problem. This is what we’re set out to do. 
           </p>
 
           <p className="text-white/70">
             If shaping the future of Islamic knowledge excites you,{" "}
-            <a href="" className="text-lime-400 underline">
-              let’s build it together
+            <a href="mailto:hello@seemorg.com" className="text-lime-400 underline">
+              let&apos;s get in touch
             </a>
             .
           </p>
