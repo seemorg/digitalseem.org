@@ -27,7 +27,7 @@ export default function Header() {
           size="lg"
           variant="link"
         >
-          <a href={`mailto:${siteConfig.ceo.email}`}>Get In Touch</a>
+          <a href={siteConfig.contact.mailto}>Get In Touch</a>
         </Button>
       </div>
     </div>

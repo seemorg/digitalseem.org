@@ -1,6 +1,5 @@
 import Container from "@/components/ui/container";
 import Pill from "@/components/ui/pill";
-import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 const vision = [
@@ -14,11 +13,6 @@ const vision = [
     description:
       "Researching Islamic texts is time-consuming and relies on primitive tooling. We're adopting state-of-the-art AI tools to make research faster, easier, and more insightful.",
   },
-  // {
-  //   title: "Accessibility",
-  //   description:
-  //     "Researching Islamic texts is time-consuming and relies on primitive tooling. We're adopting state-of-the-art AI tools to make research faster, easier, and more insightful.",
-  // },
 ];
 
 export default function OurVision() {
@@ -34,7 +28,6 @@ export default function OurVision() {
               className="-z-[2] object-cover"
             />
 
-            {/* linear gradient */}
             <div
               className="-z-[1] h-full w-full"
               style={{
@@ -47,12 +40,6 @@ export default function OurVision() {
 
           <div className="mt-6 flex flex-col gap-16 sm:flex-row">
             <div className="flex-1">
-              {/* <h2 className="text-5xl font-bold text-primary-foreground">
-                Bring centuries of Islamic knowledge to the AI age.
-              </h2> */}
-              {/* <h2 className="text-5xl font-bold text-primary-foreground">
-                Put Islamic knowledge at the forefront of the AI revolution
-              </h2> */}
               <h2 className="text-5xl font-bold text-primary-foreground">
                 Unlocking the Past, Shaping the Future
               </h2>

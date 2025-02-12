@@ -4,6 +4,7 @@ import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { Logo } from "@/components/ui/icons";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { siteConfig } from "@/lib/config";
 
 export default function Navbar({
   variant = "default",
@@ -47,8 +48,8 @@ export default function Navbar({
         </ul>
 
         <div className="flex flex-1 items-center justify-end gap-4 font-bold">
-          <Button variant={variant === "overlay" ? "blur" : "outline"}>
-            Contact
+          <Button asChild variant={variant === "overlay" ? "blur" : "outline"}>
+            <a href={siteConfig.contact.mailto}>Contact</a>
           </Button>
 
           <Button

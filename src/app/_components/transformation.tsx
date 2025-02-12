@@ -2,6 +2,7 @@ import Container from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import pattern from "@/../public/images/pattern.svg";
 import Image from "next/image";
+import { siteConfig } from "@/lib/config";
 
 export default function Transformation() {
   return (
@@ -18,19 +19,16 @@ export default function Transformation() {
               doesn&apos;t get left behind.
             </p>
             <div className="mt-8 flex items-center gap-4">
-              <Button>Get in Touch</Button>
-              <Button variant="blur">Donate</Button>
+              <Button asChild>
+                <a href={siteConfig.contact.mailto}>Get in Touch</a>
+              </Button>
+              <Button variant="blur" asChild>
+                <a href="https://donate.usul.ai" target="_blank">
+                  Donate
+                </a>
+              </Button>
             </div>
           </div>
-
-          {/* <div
-            className="absolute left-0 right-0 top-0 -z-[1] h-[230px] [--bg-angle:180deg] sm:bottom-0 sm:left-[50%] sm:h-auto sm:[--bg-angle:270deg]"
-            style={{
-              // background:
-              //   "linear-gradient(var(--bg-angle), rgba(39, 62, 61, 0.00) 40.26%, #273E3D 100%), url(/images/pattern.svg) lightgray 50% / cover no-repeat",
-              background: "url(/images/pattern.svg) / cover no-repeat",
-            }}
-          /> */}
 
           <Image
             // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment

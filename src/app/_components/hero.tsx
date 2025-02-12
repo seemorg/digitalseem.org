@@ -50,7 +50,9 @@ export default function Hero() {
           </p>
 
           <div className="mt-6 flex items-center gap-4 font-bold">
-            <Button className="h-11 px-6 py-3 font-bold">Our Projects</Button>
+            <Button className="h-11 px-6 py-3 font-bold" asChild>
+              <a href="#projects">Our Projects</a>
+            </Button>
 
             <VideoModal>
               <VideoModalTrigger asChild>

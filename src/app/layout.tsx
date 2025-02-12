@@ -1,13 +1,13 @@
 import { getMetadata, getViewport } from "@/lib/config";
 import { cn } from "@/lib/utils";
-import { Roboto, Scheherazade_New } from "next/font/google";
+import { Inter, Scheherazade_New } from "next/font/google";
 
 import "@/styles/globals.css";
 
-const roboto = Roboto({
+const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "700", "900"],
-  variable: "--font-roboto",
+  variable: "--font-inter",
 });
 
 const scheherazade = Scheherazade_New({
@@ -29,7 +29,7 @@ export default function RootLayout({
       <body
         className={cn(
           "relative min-h-screen w-full font-sans antialiased",
-          roboto.variable,
+          inter.variable,
           scheherazade.variable,
         )}
       >

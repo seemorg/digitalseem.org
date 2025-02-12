@@ -15,7 +15,7 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-roboto)", ...fontFamily.sans],
+        sans: ["var(--font-inter)", ...fontFamily.sans],
         scheherazade: ["var(--font-scheherazade)", ...fontFamily.serif],
       },
       colors: {

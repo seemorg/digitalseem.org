@@ -7,6 +7,7 @@ export const env = createEnv({
     RESEND_API_KEY: z.string().min(1),
     RESEND_AUDIENCE_ID: z.string().min(1),
     NOTION_API_KEY: z.string().min(1),
+    VERIFY_RIGHT_API_KEY: z.string().min(1),
   },
   client: {},
   runtimeEnv: {
@@ -14,6 +15,7 @@ export const env = createEnv({
     RESEND_API_KEY: process.env.RESEND_API_KEY,
     RESEND_AUDIENCE_ID: process.env.RESEND_AUDIENCE_ID,
     NOTION_API_KEY: process.env.NOTION_API_KEY,
+    VERIFY_RIGHT_API_KEY: process.env.VERIFY_RIGHT_API_KEY,
   },
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,
   emptyStringAsUndefined: true,

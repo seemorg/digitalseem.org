@@ -90,7 +90,7 @@ export default function Projects() {
               height={334}
               quality={100}
               className={cn(
-                "absolute bottom-3 right-0 h-[220px] w-auto object-contain xs:h-[300px] lg:bottom-1/2 lg:top-1/2 lg:w-full lg:-translate-y-1/2",
+                "absolute bottom-3 right-0 h-[220px] w-auto object-contain xs:h-[300px] lg:bottom-1/2 lg:top-1/2 lg:-translate-y-1/2",
               )}
             />
           </BentoCard>
