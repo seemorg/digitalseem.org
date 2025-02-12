@@ -5,6 +5,28 @@ import { Logo } from "@/components/ui/icons";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/config";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogTrigger,
+} from "../ui/dialog";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+
+const links = [
+  {
+    href: "#about",
+    label: "About",
+  },
+  {
+    href: "#projects",
+    label: "Projects",
+  },
+  {
+    href: "/careers",
+    label: "Careers",
+  },
+];
 
 export default function Navbar({
   variant = "default",
@@ -36,15 +58,11 @@ export default function Navbar({
         </div>
 
         <ul className="hidden flex-1 items-center justify-center gap-8 sm:flex">
-          <li>
-            <Link href="/#about">About</Link>
-          </li>
-          <li>
-            <Link href="/#projects">Projects</Link>
-          </li>
-          <li>
-            <Link href="/careers">Careers</Link>
-          </li>
+          {links.map((link) => (
+            <li key={link.href}>
+              <Link href={link.href}>{link.label}</Link>
+            </li>
+          ))}
         </ul>
 
         <div className="flex flex-1 items-center justify-end gap-4 font-bold">
@@ -52,13 +70,36 @@ export default function Navbar({
             <a href={siteConfig.contact.mailto}>Contact</a>
           </Button>
 
-          <Button
-            size="icon"
-            variant={variant === "overlay" ? "blur" : "outline"}
-            className="sm:hidden"
-          >
-            <HamburgerMenuIcon className="size-4" />
-          </Button>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button
+                size="icon"
+                variant={variant === "overlay" ? "blur" : "outline"}
+                className="group sm:hidden"
+              >
+                <HamburgerMenuIcon className="size-4 group-data-[state=open]:hidden" />
+                <XMarkIcon className="hidden size-4 group-data-[state=open]:block" />
+              </Button>
+            </DialogTrigger>
+            <DialogContent
+              className="top-[70px] translate-y-0 rounded-2xl p-4"
+              overlayClassName="bg-slate-300/50"
+              showCloseButton={false}
+            >
+              <DialogTitle className="sr-only">Menu</DialogTitle>
+              <ul className="flex flex-col gap-2 text-lg ">
+                {links.map((link) => (
+                  <Link
+                    href={link.href}
+                    key={link.href}
+                    className="block w-full p-2"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </ul>
+            </DialogContent>
+          </Dialog>
         </div>
       </Container>
     </nav>
