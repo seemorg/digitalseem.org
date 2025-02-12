@@ -5,7 +5,7 @@ const contactEmail = "contact@digitalseem.org";
 export const siteConfig = {
   org: "Seemore Foundation",
   description:
-    "We're an applied research lab pioneering Islamic knowledge access through cutting-edge AI. We're the team behind Usul AI.",
+    "We're an applied research lab pioneering Islamic knowledge access through cutting-edge AI and the team behind Usul AI.",
   contact: {
     email: contactEmail,
     mailto: `mailto:${contactEmail}`,
