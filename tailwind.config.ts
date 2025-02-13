@@ -54,7 +54,7 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "modal-fade-in": "modal-fade-in 0.15s ease-out",
+        "modal-fade-in": "modal-fade-in 0.2s ease-in",
         "modal-fade-out": "modal-fade-out 0.15s ease-out",
       },
       screens: {

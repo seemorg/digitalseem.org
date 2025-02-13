@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { PlayCircleIcon, PlayIcon } from "@heroicons/react/24/outline";
+import { PlayIcon } from "@heroicons/react/24/outline";
+import { PlayIcon as PlayIconSolid } from "@heroicons/react/24/solid";
 import Navbar from "@/components/layout/navbar";
 import Image from "next/image";
 import {
@@ -18,7 +19,7 @@ import { siteConfig } from "@/lib/config";
 
 export default function Hero() {
   return (
-    <section className="relative isolate flex h-[max(100vh,1000px)] w-full items-center justify-center sm:items-end">
+    <section className="relative isolate flex min-h-screen w-full justify-center">
       <Image
         src="/images/hero.png"
         alt="Hero"
@@ -40,13 +41,13 @@ export default function Hero() {
 
       <Navbar variant="overlay" />
 
-      <div className="mt-20 flex flex-col items-center px-6 text-white">
+      <div className="mt-64 flex flex-col items-center justify-between px-6 text-white">
         <div className="mx-auto flex max-w-3xl flex-col items-center">
           <h1 className="text-center font-scheherazade text-6xl font-medium sm:text-8xl">
             The Future of Islamic Knowledge
           </h1>
 
-          <p className="mt-6 max-w-[460px] text-center">
+          <p className="mt-6 max-w-[420px] text-center">
             We&apos;re an applied research lab pioneering Islamic knowledge
             access through cutting-edge AI
           </p>
@@ -81,8 +82,8 @@ export default function Hero() {
                     </VideoPreview>
 
                     <VideoPlayButton>
-                      <button className="absolute inset-0 m-auto flex size-32 items-center justify-center rounded-full border border-white border-white/10 bg-white/50 transition duration-300 hover:bg-white/75">
-                        <PlayCircleIcon className="size-20 stroke-1 text-white" />
+                      <button className="absolute inset-0 m-auto flex size-28 items-center justify-center rounded-full border border-gray-100/50 bg-white/20 text-white backdrop-blur transition duration-300 hover:bg-white/30">
+                        <PlayIconSolid className="ml-1 size-16" />
                       </button>
                     </VideoPlayButton>
 
@@ -94,7 +95,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="mx-auto mt-[150px] flex max-w-4xl flex-col gap-6 pb-[60px] sm:mt-[200px] sm:pb-[120px]">
+        <div className="mx-auto mt-56 flex max-w-4xl flex-col gap-6 pb-16 sm:pb-28">
           <h3 className="text-2xl font-bold">Building for The AI Age</h3>
           <p>
             We’re transitioning into an AI-first world. Islamic Knowledge is not

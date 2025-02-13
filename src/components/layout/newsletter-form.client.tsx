@@ -57,7 +57,7 @@ export default function NewsletterForm({ className }: { className?: string }) {
         <div className="mt-4 sm:ml-4 sm:mt-0 sm:shrink-0">
           <Button
             type="submit"
-            className="shadow-none hover:bg-primary-background/70 focus:bg-primary-background/70"
+            className="shadow-none hover:bg-lime-400/90 focus:bg-lime-400/90"
             disabled={pending}
           >
             {pending ? "Subscribing..." : "Subscribe"}

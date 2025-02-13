@@ -29,13 +29,13 @@ export default function Navbar({
   return (
     <nav
       className={cn(
-        variant === "overlay" && "absolute left-0 right-0 top-0 text-white",
+        variant === "overlay" &&
+          "absolute left-0 right-0 top-0 text-white backdrop-blur-lg",
       )}
       style={
         variant === "overlay"
           ? {
               background: `linear-gradient(180deg, rgba(43, 55, 61, 0.00) 0%, rgba(115, 147, 163, 0.00) 100%)`,
-              backdropFilter: `blur(17px)`,
             }
           : undefined
       }
