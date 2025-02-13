@@ -25,7 +25,9 @@ export async function generateMetadata(props: PageProps) {
 
   if (!career) return {};
 
-  return getMetadata({ title: career.title, description });
+  const plainText = description?.replace(/\[.*?\]|\*|_|#|`/g, "");
+
+  return getMetadata({ title: career.title, description: plainText });
 }
 
 export async function generateStaticParams(): Promise<{ params: Params }[]> {
