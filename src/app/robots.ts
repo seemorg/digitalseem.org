@@ -1,4 +1,4 @@
-import { config } from "@/lib/config";
+import { siteConfig } from "@/lib/config";
 
 export default function robots() {
   return {
@@ -7,7 +7,7 @@ export default function robots() {
         userAgent: "*",
       },
     ],
-    sitemap: `${config.url}/sitemap.xml`,
-    host: config.url,
+    sitemap: `${siteConfig.url}/sitemap.xml`,
+    host: siteConfig.url,
   };
 }

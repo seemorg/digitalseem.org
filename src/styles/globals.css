@@ -2,15 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-#gradient {
-  --gradient-color-3: #e24260;
-  --gradient-color-4: #ee8b61;
-  --gradient-color-2: #ea3b47;
-  --gradient-color-1: #f6ca6b;
-}
-
 .prose li::before,
 .list li::before {
   content: "—";
   @apply left-0 mr-2 w-auto opacity-50;
+}
+
+html {
+  scroll-behavior: smooth;
 }

@@ -1,54 +1,127 @@
-import { compileMarkdown } from "@/lib/md";
 import { getOpenCareers } from "@/lib/notion";
 import Link from "next/link";
-import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import Pill from "@/components/ui/pill";
 import { getMetadata } from "@/lib/config";
-import { CAREERS_PAGE_REVALIDATE } from "@/lib/constants";
+import Navbar from "@/components/layout/navbar";
+import Footer from "@/components/layout/footer";
+import Container from "@/components/ui/container";
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
+import { compileMarkdown } from "@/lib/md";
+// import Faqs from "./faqs";
 
-export const revalidate = CAREERS_PAGE_REVALIDATE;
+export const revalidate = 1200; // 20 mins
 
 export async function generateMetadata() {
-  const { description } = await getOpenCareers();
-  return getMetadata({ title: "Careers", description });
+  const { description: careersDescription } = await getOpenCareers();
+  const plainText = careersDescription?.replace(/\[.*?\]|\*|_|#|`/g, "");
+
+  return getMetadata({
+    title: "Careers",
+    description: plainText,
+  });
 }
 
 export default async function CareersPage() {
   const careers = await getOpenCareers();
+  const description = careers.description
+    ? await compileMarkdown(careers.description, false)
+    : null;
 
   return (
-    <div className="min-h-[50vh]">
-      <h1 className="text-4xl font-bold">Careers</h1>
-      {careers.description && (
-        <div className="mt-2 text-lg">
-          {await compileMarkdown(careers.description)}
-        </div>
-      )}
+    <>
+      <Navbar />
 
-      <ul className="mt-20 flex flex-col gap-5">
-        {careers.jobs.map((job) => (
-          <Link
-            href={`/careers/${job.slug}`}
-            key={job.slug}
-            className="flex w-full flex-col justify-between rounded-md bg-primary-100/5 px-8 py-8 transition-colors hover:bg-primary-100/10 sm:flex-row sm:items-center"
-          >
+      <Container>
+        <div className="flex flex-col justify-between gap-10 border-b border-black/10 py-24 md:flex-row md:items-center md:gap-5">
+          <div className="max-w-md">
+            <h1 className="text-5xl font-bold text-primary-foreground">
+              Careers
+            </h1>
+
+            <p className="mt-2 text-secondary">
+              Seemore Foundation is a non-profit building the future of Islamic
+              Law research.
+            </p>
+          </div>
+
+          {/* <div className="block h-[1px] w-full flex-shrink-0 flex-grow-0 bg-black/10 md:h-24 md:w-[1px]" /> */}
+
+          {/* <div className="flex flex-wrap items-center justify-between gap-12 md:justify-end [&_h3]:text-4xl [&_h3]:font-bold [&_h3]:text-primary-foreground [&_p]:mt-2 [&_p]:text-secondary">
             <div>
-              <h3>{job.title}</h3>
-              <div className="mt-3 flex items-center gap-3 sm:mt-7">
-                {job.type && <Pill>{job.type}</Pill>}
-                {job.location && <Pill>{job.location}</Pill>}
-              </div>
+              <h3>Registered Non-Profit</h3>
+              <p>501(c)3 status pending</p>
             </div>
 
-            <p className="mt-10 flex items-center gap-2 text-lg sm:mt-0">
-              Read more
-              <ArrowRightIcon className="h-5 w-5" />
-            </p>
-          </Link>
-        ))}
-      </ul>
+            <div>
+              <h3>2021</h3>
+              <p>Year Founded</p>
+            </div>
 
-      <div className="h-32" />
-    </div>
+            <div>
+              <h3>100,000+</h3>
+              <p>Users</p>
+            </div>
+
+            <div>
+              <h3>142+</h3>
+              <p>Countries</p>
+            </div>
+          </div> */}
+        </div>
+      </Container>
+
+      <Container className="min-h-[50vh] max-w-4xl">
+        <div className="py-12">
+          <div className="flex flex-col gap-4">
+            {careers.jobs.length > 0 ? (
+              careers.jobs.map((job) => (
+                <Link
+                  key={job.slug}
+                  href={`/careers/${job.slug}`}
+                  className="flex items-start justify-between rounded-2xl bg-white p-8 transition-colors hover:bg-gray-50"
+                >
+                  <div>
+                    <h3 className="text-2xl font-bold">{job.title}</h3>
+                    {description && (
+                      <div className="mt-2 text-sm text-secondary">
+                        {description}
+                      </div>
+                    )}
+
+                    <div className="mt-6 flex items-center gap-2">
+                      <Pill
+                        variant="secondary"
+                        className="bg-transparent px-5 py-2 text-sm font-normal"
+                      >
+                        {job.type}
+                      </Pill>
+                      <Pill
+                        variant="secondary"
+                        className="bg-transparent px-5 py-2 text-sm font-normal"
+                      >
+                        {job.location}
+                      </Pill>
+                    </div>
+                  </div>
+
+                  <p className="hidden items-center gap-2 text-sm text-lime-600 hover:text-lime-700 sm:flex">
+                    Details
+                    <ChevronRightIcon className="h-4 w-4" />
+                  </p>
+                </Link>
+              ))
+            ) : (
+              <p className="text-center text-lg text-secondary">
+                No open positions
+              </p>
+            )}
+          </div>
+        </div>
+
+        {/* <Faqs /> */}
+      </Container>
+
+      <Footer />
+    </>
   );
 }
