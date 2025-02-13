@@ -74,7 +74,7 @@ export default async function CareerPage(props: PageProps) {
     <>
       <Navbar />
 
-      <Container className="max-w-4xl py-12">
+      <Container className="max-w-4xl py-24">
         <h1 className="text-5xl font-bold text-primary-foreground">{title}</h1>
         {description && <p className="mt-2 text-secondary">{description}</p>}
 

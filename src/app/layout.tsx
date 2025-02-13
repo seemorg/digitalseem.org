@@ -1,6 +1,7 @@
 import { getMetadata, getViewport } from "@/lib/config";
 import { cn } from "@/lib/utils";
 import { Inter, Scheherazade_New } from "next/font/google";
+import Providers from "./providers";
 
 import "@/styles/globals.css";
 
@@ -33,7 +34,7 @@ export default function RootLayout({
           scheherazade.variable,
         )}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

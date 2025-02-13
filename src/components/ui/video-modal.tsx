@@ -118,6 +118,11 @@ const VideoPlayButton = React.forwardRef<
 ));
 VideoPlayButton.displayName = "VideoPlayButton";
 
+const VideoPlayerContext = React.createContext<{
+  isPlaying: boolean;
+  setIsPlaying: (isPlaying: boolean) => void;
+} | null>(null);
+
 const VideoPlayer = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
@@ -125,18 +130,20 @@ const VideoPlayer = React.forwardRef<
   const [isPlaying, setIsPlaying] = React.useState(false);
 
   return (
-    <div
-      ref={ref}
-      className={cn(
-        "group relative aspect-video max-w-4xl overflow-hidden rounded-xl border border-gray-950/[.1] object-cover",
-        isPlaying && "playing",
-        className,
-      )}
-      onClick={() => setIsPlaying(true)}
-      {...props}
-    >
-      {children}
-    </div>
+    <VideoPlayerContext.Provider value={{ isPlaying, setIsPlaying }}>
+      <div
+        ref={ref}
+        className={cn(
+          "group relative aspect-video max-w-4xl overflow-hidden rounded-xl border border-gray-950/[.1] object-cover",
+          isPlaying && "playing",
+          className,
+        )}
+        onClick={() => setIsPlaying(true)}
+        {...props}
+      >
+        {children}
+      </div>
+    </VideoPlayerContext.Provider>
   );
 });
 VideoPlayer.displayName = "VideoPlayer";
@@ -196,6 +203,29 @@ const CloseIcon = React.forwardRef<
 
 CloseIcon.displayName = "CloseIcon";
 
+const VideoIframe = React.forwardRef<
+  HTMLIFrameElement,
+  React.HTMLAttributes<HTMLIFrameElement> & { src: string }
+>(({ className, ...props }, ref) => {
+  const value = React.useContext(VideoPlayerContext);
+  const isPlaying = value?.isPlaying;
+
+  if (!isPlaying) {
+    return null;
+  }
+
+  return (
+    <iframe
+      ref={ref}
+      className={cn("size-full", className)}
+      allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+      allowFullScreen
+      {...props}
+    />
+  );
+});
+VideoIframe.displayName = "VideoIframe";
+
 export {
   VideoModal,
   VideoModalTrigger,
@@ -206,4 +236,5 @@ export {
   VideoPreview,
   VideoPlayButton,
   VideoPlayer,
+  VideoIframe,
 };
