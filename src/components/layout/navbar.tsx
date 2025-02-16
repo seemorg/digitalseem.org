@@ -16,6 +16,10 @@ const links = [
     label: "Projects",
   },
   {
+    href: "/#team",
+    label: "Team",
+  },
+  {
     href: "/careers",
     label: "Careers",
   },
