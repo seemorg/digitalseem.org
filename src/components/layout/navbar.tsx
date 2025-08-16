@@ -16,6 +16,10 @@ const links = [
     label: "Projects",
   },
   {
+    href: "/#team",
+    label: "Team",
+  },
+  {
     href: "/careers",
     label: "Careers",
   },
@@ -43,14 +47,14 @@ export default function Navbar({
       <Container className="flex items-center justify-between border-b border-white/10 py-4">
         <div className="flex-1">
           <Link href="/" className="flex items-center gap-2">
-            <Logo className="w-8" />
-            <span>
+            <Logo className="w-6 sm:w-8" />
+            <span className="text-sm sm:text-base">
               <strong>Seemore</strong> Foundation
             </span>
           </Link>
         </div>
 
-        <ul className="hidden flex-1 items-center justify-center gap-8 sm:flex">
+        <ul className="hidden flex-1 items-center justify-center gap-8 md:flex">
           {links.map((link) => (
             <li key={link.href}>
               <Link href={link.href}>{link.label}</Link>

@@ -2,5 +2,6 @@
   "tailwindCSS.experimental.classRegex": [
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
     ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
-  ]
+  ],
+  "tailwindCSS.experimental.configFile": "./src/styles/globals.css"
 }

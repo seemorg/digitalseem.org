@@ -3,7 +3,7 @@
 import { env } from "@/env";
 import { resend } from "@/lib/resend";
 import type { NewsletterFormState } from "@/types/newsletter";
-import { z } from "zod";
+import z from "zod/v4";
 
 export const verifyEmail = async (email: string) => {
   const response = await fetch(
@@ -22,7 +22,7 @@ export const addEmailToNewsletter = async (
   formData: FormData,
 ): Promise<NewsletterFormState> => {
   const email = formData.get("email");
-  const result = z.string().email().safeParse(email);
+  const result = z.email().safeParse(email);
 
   if (!result.success) {
     return {
