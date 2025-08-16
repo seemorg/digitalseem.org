@@ -1,8 +1,8 @@
 "use client";
 
-import * as React from "react";
-import * as DialogPrimitive from "@radix-ui/react-dialog";
+import { Dialog as DialogPrimitive } from "radix-ui";
 import { cn } from "@/lib/utils";
+import { createContext, use, useState } from "react";
 
 const VideoModal = DialogPrimitive.Root;
 
@@ -12,36 +12,41 @@ const VideoModalPortal = DialogPrimitive.Portal;
 
 const VideoModalClose = DialogPrimitive.Close;
 
-const VideoModalOverlay = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Overlay>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
->(({ className, ...props }, ref) => (
+const VideoModalOverlay = ({
+  className,
+  ...props
+}: React.ComponentProps<typeof DialogPrimitive.Overlay>) => (
   <DialogPrimitive.Overlay
-    ref={ref}
     className={cn(
       "data-[state=closed]:animate-modal-fade-out data-[state=open]:animate-modal-fade-in fixed inset-0 z-50 bg-black/5 backdrop-blur-xl",
       className,
     )}
     {...props}
   />
-));
-VideoModalOverlay.displayName = DialogPrimitive.Overlay.displayName;
+);
 
-const VideoModalContent = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
->(({ className, children, ...props }, ref) => (
+const VideoModalContent = ({
+  className,
+  children,
+  ...props
+}: React.ComponentProps<typeof DialogPrimitive.Content>) => (
   <VideoModalPortal>
     <VideoModalOverlay />
     <DialogPrimitive.Content
-      ref={ref}
       className={cn(
         "fixed left-1/2 top-1/2 z-50 flex h-screen w-screen -translate-x-1/2 -translate-y-1/2 items-center justify-center p-3",
-        "data-[state=closed]:animate-modal-fade-out data-[state=open]:animate-modal-fade-in transition-all data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[50%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[50%]",
+        "data-[state=closed]:animate-modal-fade-out data-[state=open]:animate-modal-fade-in data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[50%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[50%] transition-all",
         className,
       )}
       {...props}
     >
+      <DialogPrimitive.Title className="sr-only">
+        Video modal
+      </DialogPrimitive.Title>
+      <DialogPrimitive.Description className="sr-only">
+        A word from our CEO: Seemore Foundation overview
+      </DialogPrimitive.Description>
+
       <div className="relative mx-auto flex size-full items-center justify-center rounded-2xl border border-gray-950/10 bg-black/30">
         {/* Mobile close button */}
         <CloseIcon isMobile />
@@ -56,40 +61,34 @@ const VideoModalContent = React.forwardRef<
       </div>
     </DialogPrimitive.Content>
   </VideoModalPortal>
-));
+);
 
-VideoModalContent.displayName = DialogPrimitive.Content.displayName;
-
-const VideoModalTitle = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Title>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Title>
->(({ className, ...props }, ref) => (
+const VideoModalTitle = ({
+  className,
+  ...props
+}: React.ComponentProps<typeof DialogPrimitive.Title>) => (
   <DialogPrimitive.Title
-    ref={ref}
     className={cn("mb-4 text-4xl font-bold text-white", className)}
     {...props}
   />
-));
-VideoModalTitle.displayName = DialogPrimitive.Title.displayName;
+);
 
-const VideoModalDescription = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Description>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description>
->(({ className, ...props }, ref) => (
+const VideoModalDescription = ({
+  className,
+  ...props
+}: React.ComponentProps<typeof DialogPrimitive.Description>) => (
   <DialogPrimitive.Description
-    ref={ref}
     className={cn("mb-6 text-xl text-white/80", className)}
     {...props}
   />
-));
-VideoModalDescription.displayName = DialogPrimitive.Description.displayName;
+);
 
-const VideoPreview = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, children, ...props }, ref) => (
+const VideoPreview = ({
+  className,
+  children,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
   <div
-    ref={ref}
     className={cn(
       "absolute inset-0 z-10 transition-opacity duration-500 group-[.playing]:pointer-events-none group-[.playing]:opacity-0",
       className,
@@ -98,15 +97,14 @@ const VideoPreview = React.forwardRef<
   >
     {children}
   </div>
-));
-VideoPreview.displayName = "VideoPreview";
+);
 
-const VideoPlayButton = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, children, ...props }, ref) => (
+const VideoPlayButton = ({
+  className,
+  children,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
   <div
-    ref={ref}
     className={cn(
       "absolute inset-0 z-20 flex items-center justify-center transition-opacity duration-300 group-[.playing]:pointer-events-none group-[.playing]:opacity-0",
       className,
@@ -115,24 +113,23 @@ const VideoPlayButton = React.forwardRef<
   >
     {children}
   </div>
-));
-VideoPlayButton.displayName = "VideoPlayButton";
+);
 
-const VideoPlayerContext = React.createContext<{
+const VideoPlayerContext = createContext<{
   isPlaying: boolean;
   setIsPlaying: (isPlaying: boolean) => void;
 } | null>(null);
 
-const VideoPlayer = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, children, ...props }, ref) => {
-  const [isPlaying, setIsPlaying] = React.useState(false);
+const VideoPlayer = ({
+  className,
+  children,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) => {
+  const [isPlaying, setIsPlaying] = useState(false);
 
   return (
     <VideoPlayerContext.Provider value={{ isPlaying, setIsPlaying }}>
       <div
-        ref={ref}
         className={cn(
           "group relative aspect-video max-w-4xl overflow-hidden rounded-xl border border-gray-950/[.1] object-cover",
           isPlaying && "playing",
@@ -145,15 +142,14 @@ const VideoPlayer = React.forwardRef<
       </div>
     </VideoPlayerContext.Provider>
   );
-});
-VideoPlayer.displayName = "VideoPlayer";
+};
 
-const VideoModalVideo = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, children, ...props }, ref) => (
+const VideoModalVideo = ({
+  className,
+  children,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
   <div
-    ref={ref}
     className={cn(
       "aspect-video max-w-4xl overflow-hidden rounded-xl border border-gray-950/10 object-cover shadow-xl",
       className,
@@ -162,17 +158,16 @@ const VideoModalVideo = React.forwardRef<
   >
     {children}
   </div>
-));
-VideoModalVideo.displayName = "VideoModalVideo";
+);
 
-const CloseIcon = React.forwardRef<
-  React.ElementRef<typeof VideoModalClose>,
-  React.ComponentPropsWithoutRef<typeof VideoModalClose> & {
-    isMobile?: boolean;
-  }
->(({ className, isMobile = false, ...props }, ref) => (
+const CloseIcon = ({
+  className,
+  isMobile = false,
+  ...props
+}: React.ComponentProps<typeof VideoModalClose> & {
+  isMobile?: boolean;
+}) => (
   <VideoModalClose
-    ref={ref}
     className={cn(
       "rounded-full border border-gray-50/30 bg-white/10 p-3 text-white transition duration-300 hover:bg-white/20",
       isMobile
@@ -199,15 +194,14 @@ const CloseIcon = React.forwardRef<
     </svg>
     <span className="sr-only">Close</span>
   </VideoModalClose>
-));
+);
 
-CloseIcon.displayName = "CloseIcon";
-
-const VideoIframe = React.forwardRef<
-  HTMLIFrameElement,
-  React.HTMLAttributes<HTMLIFrameElement> & { src: string }
->(({ className, ...props }, ref) => {
-  const value = React.useContext(VideoPlayerContext);
+const VideoIframe = ({
+  className,
+  children,
+  ...props
+}: React.HTMLAttributes<HTMLIFrameElement> & { src: string }) => {
+  const value = use(VideoPlayerContext);
   const isPlaying = value?.isPlaying;
 
   if (!isPlaying) {
@@ -216,15 +210,13 @@ const VideoIframe = React.forwardRef<
 
   return (
     <iframe
-      ref={ref}
       className={cn("size-full", className)}
       allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
       allowFullScreen
       {...props}
     />
   );
-});
-VideoIframe.displayName = "VideoIframe";
+};
 
 export {
   VideoModal,
