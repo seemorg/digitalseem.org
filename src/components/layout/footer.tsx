@@ -7,17 +7,17 @@ export default function Footer() {
     <footer>
       <Container>
         <div className="border-secondary/10 pb-8 pt-8 sm:pt-12 lg:pt-16">
-          <div className="border-t border-secondary/10 pt-8 lg:flex lg:items-center lg:justify-between">
+          <div className="border-t border-secondary/10 pt-8">
             <div>
               <h3 className="text-sm/6 font-semibold text-gray-900">
-                Subscribe to our newsletter
+              Subscribe to our newsletter
               </h3>
               <p className="mt-2 text-sm/6 text-gray-600">
-                Receive updates when we have announcements. No spam ever.
+              Receive updates and announcements.
               </p>
             </div>
 
-            <NewsletterForm className="mt-6 sm:flex sm:max-w-md lg:mt-0" />
+            <NewsletterForm className="mt-6 sm:flex sm:max-w-md" />
           </div>
           <div className="mt-8 border-t border-secondary/10 pt-8 md:flex md:items-center md:justify-between">
             <div className="flex gap-x-6 md:order-2">

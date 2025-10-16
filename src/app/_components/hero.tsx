@@ -39,8 +39,6 @@ export default function Hero() {
         }}
       />
 
-      <Navbar variant="overlay" />
-
       <div className="mt-64 flex flex-col items-center justify-between px-6 text-white">
         <div className="mx-auto flex max-w-3xl flex-col items-center">
           <h1 className="text-center font-scheherazade text-6xl font-medium sm:text-8xl">
@@ -48,8 +46,7 @@ export default function Hero() {
           </h1>
 
           <p className="mt-6 max-w-[420px] text-center">
-            We&apos;re an applied research lab pioneering Islamic knowledge
-            access through cutting-edge AI
+            We are an organization dedicated to evolving Islamic research for the 21st-century by combining scholarly rigor with AI and other cutting-edge technologies
           </p>
 
           <div className="mt-6 flex items-center gap-4 font-bold">
@@ -95,18 +92,12 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="mx-auto mt-56 flex max-w-4xl flex-col gap-6 pb-16 sm:pb-28">
-          <h3 className="text-2xl font-bold">Building for The AI Age</h3>
+        <div id="about"></div>
+
+        <div id="about" className="mx-auto mt-56 flex max-w-4xl flex-col gap-6 pb-16 sm:pb-28">
+          <h3 className="text-2xl font-bold">Bridging Tradition and Technology</h3>
           <p>
-            We’re transitioning into an AI-first world. Islamic Knowledge is not
-            ready for the transition. AIs cannot process the majority of the
-            Islamic texts today because they’re in non-machine readable formats
-            such as scanned PDFs, or in some cases, only available in physical
-            copies. Texts often lack the required metadata or proper cataloging
-            needed for AIs to to retrieve and access them. To have a future
-            where Islamic knowledge is at the forefront of the AI revolution, we
-            need resources a full-time team tackling this problem. This is what
-            we’re set out to do.
+          As artificial intelligence and online tools transform how the world accesses, analyzes, and preserves knowledge of all types, Islamic knowledge has not kept up. The best platforms are built for the English language, and they train on the existing expanse of the internet–which largely excludes primary sources from the Islamic world, most of which have yet to be digitized. Core texts—spanning law, history, literature and more—often exist only in books on library shelves or scanned pdfs that machines cannot read and, even when they can, provide unstructured formats that  the latest digital tools cannot readily use. Our mission is to address this foundational problem by developing the technical infrastructure that enables Islamic texts to be machine-readable, searchable, and analyzable at scale. Our work bridges the gap between longstanding scholarly traditions and modern research technologies. We collaborate with scholars, technologists, and institutions who share a commitment to preserving the depth of the Islamic tradition while making it accessible and analyzable for future generations.
           </p>
 
           <p className="text-white/70">

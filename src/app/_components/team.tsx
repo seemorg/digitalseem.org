@@ -85,7 +85,7 @@ const team = [
 
 export default function Team() {
   return (
-    <section className="py-28">
+    <section id="team" className="py-28">
       <Container>
         <Pill>Team</Pill>
         <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
@@ -95,9 +95,7 @@ export default function Team() {
 
           <p className="max-w-lg text-lg text-secondary">
             {/* Our team comes from Harvard, UPenn, Twitter, and Quran.com. We&apos;re working at the intersection of technology and Islamic research. Join our team. */}
-            We&apos;re a group of technologists and scholars bringing expertise
-            from Harvard, UPenn, Twitter, and Quran.com working at the
-            intersection of AI and Islamic research.
+            The Seemore Foundation is a research-forward nonprofit organization that develops technologies to advance access to and generate insights in Islamic knowledge. Its team brings together experts in AI, engineering, and Islamic studies, working at the intersection of tradition and machine learning to create scalable tools that advance the future of scholarship.
           </p>
         </div>
 
