@@ -36,13 +36,14 @@ export const addEmailToNewsletter = async (
     } satisfies NewsletterFormState;
   }
 
-  const isValidEmail = await verifyEmail(result.data);
-  if (!isValidEmail) {
-    return {
-      status: "error",
-      error: "Invalid email, please try again.",
-    } satisfies NewsletterFormState;
-  }
+  // TODO: Uncomment this when verifyright is fixed
+  // const isValidEmail = await verifyEmail(result.data);
+  // if (!isValidEmail) {
+  //   return {
+  //     status: "error",
+  //     error: "Invalid email, please try again.",
+  //   } satisfies NewsletterFormState;
+  // }
 
   await resend.contacts.create({
     email: result.data,
