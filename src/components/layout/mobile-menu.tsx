@@ -12,12 +12,14 @@ import Link from "next/link";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
+type MobileLink = { href?: string; label: string; children?: { href: string; label: string }[] };
+
 export default function MobileMenu({
   variant,
   links,
 }: {
   variant: "overlay" | "default";
-  links: { href: string; label: string }[];
+  links: MobileLink[];
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -47,14 +49,33 @@ export default function MobileMenu({
           <DialogDescription className="sr-only">Mobile menu</DialogDescription>
           <ul className="flex flex-col gap-2 text-lg ">
             {links.map((link) => (
-              <Link
-                href={link.href}
-                key={link.href}
-                className="block w-full p-2"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.label}
-              </Link>
+              <li key={link.label}>
+                {link.children ? (
+                  <div className="flex flex-col">
+                    <span className="block w-full p-2 font-semibold">{link.label}</span>
+                    <div className="ml-2 flex flex-col border-l border-black/10 pl-2">
+                      {link.children.map((child) => (
+                        <Link
+                          href={child.href}
+                          key={child.href}
+                          className="block w-full rounded p-2 hover:bg-black/5"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    href={link.href!}
+                    className="block w-full p-2"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                )}
+              </li>
             ))}
           </ul>
         </DialogContent>

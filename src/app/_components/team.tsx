@@ -33,25 +33,25 @@ const team = [
     image: "/images/team/zeki.png",
   },
   {
-    name: "Abdellatif Abdelfattah",
-    title: "CEO",
+    name: "Ahmet Aktan",
+    title: "Digitization Lead",
     description:
-      "Abdellatif co-founded Tarteel AI, lead engineering at Quran.com, and worked at Twitter.",
-    image: "/images/team/abdellatif.png",
+      "Ahmed holds a PhD. from Al-Azhar university. He leads the digitization team and efforts.",
+    image: "/images/team/ahmed-aktan.png",
   },
   {
-    name: "Mohamed Lamine",
-    title: "Head of Design",
+    name: "Anas Hassanien",
+    title: "Software Engineer",
     description:
-      "Mohamed was the design lead at Thmanyah, he consults with startups to build 0 to 1 products",
-    image: "/images/team/lamine.png",
+      "Anas leads the development of our core products. He was a software engineer at Simli AI.",
+    image: "/images/team/anas.png",
   },
   {
-    name: "Ahmed Riad",
-    title: "Founding Engineer",
+    name: "Ismail Safadi",
+    title: "Researcher",
     description:
-      "Ahmed co-founded Remail AI, Betterbook, and was an engineer at Quran.com.",
-    image: "/images/team/ahmed-riad.png",
+      "Ismail specializes in Hanafi fiqh. He studied at the University of Jordan and in Turkey.",
+    image: "/images/team/ismail.png",
   },
   {
     name: "Ryad Ramo",
@@ -61,25 +61,18 @@ const team = [
     image: "/images/team/ryad.png",
   },
   {
-    name: "Rahma Fateen",
-    title: "Localization Lead",
+    name: "Abdellatif Abdelfattah",
+    title: "Founding CEO",
     description:
-      "Rahma lead Arabic localization at Tarteel AI. She was a translator at Human Rights Watch.",
-    image: "/images/team/rahma.png",
+      "Abdellatif co-founded Tarteel AI, lead engineering at Quran.com, and worked at Twitter.",
+    image: "/images/team/abdellatif.png",
   },
   {
-    name: "Ahmed Khan",
-    title: "Researcher",
+    name: "Ahmed Riad",
+    title: "Founding Engineer",
     description:
-      "Ahmed is a student at Zaytuna College. He's the creator of The Creative Minority podcast.",
-    image: "/images/team/ahmed-khan.png",
-  },
-  {
-    name: "Ahmet Aktan",
-    title: "Digitization Lead",
-    description:
-      "Ahmed holds a PhD. from Al-Azhar university. He leads the digitization team and efforts.",
-    image: "/images/team/ahmed-aktan.png",
+      "Ahmed co-founded Remail AI, Betterbook, and was an engineer at Quran.com.",
+    image: "/images/team/ahmed-riad.png",
   },
 ];
 
@@ -89,26 +82,29 @@ export default function Team() {
       <Container>
         <Pill>Team</Pill>
         <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-          <h2 className="max-w-md text-5xl font-bold text-primary-foreground">
+          <h2 className="text-primary-foreground max-w-md text-5xl font-bold">
             Meet the Team Behind our Mission
           </h2>
 
-          <p className="max-w-lg text-lg text-secondary">
+          <p className="text-secondary max-w-lg text-lg">
             {/* Our team comes from Harvard, UPenn, Twitter, and Quran.com. We&apos;re working at the intersection of technology and Islamic research. Join our team. */}
-            We&apos;re a group of technologists and scholars bringing expertise
-            from Harvard, UPenn, Twitter, and Quran.com working at the
-            intersection of AI and Islamic research.
+            The Seemore Foundation is a research-forward nonprofit organization
+            that develops technologies to advance access to and generate
+            insights in Islamic knowledge. Its team brings together experts in
+            AI, engineering, and Islamic studies, working at the intersection of
+            tradition and machine learning to create scalable tools that advance
+            the future of scholarship.
           </p>
         </div>
 
         <TeamCarousel>
           <CarouselPrevious
-            className="-left-5 z-10 hidden bg-white text-primary-foreground hover:bg-white/80 disabled:pointer-events-none disabled:opacity-0 sm:flex"
+            className="text-primary-foreground -left-5 z-10 hidden bg-white hover:bg-white/80 disabled:pointer-events-none disabled:opacity-0 sm:flex"
             variant="default"
           />
 
           <CarouselNext
-            className="-right-5 z-10 hidden bg-white text-primary-foreground hover:bg-white/80 disabled:pointer-events-none disabled:opacity-0 sm:flex"
+            className="text-primary-foreground -right-5 z-10 hidden bg-white hover:bg-white/80 disabled:pointer-events-none disabled:opacity-0 sm:flex"
             variant="default"
           />
 
@@ -131,11 +127,11 @@ export default function Team() {
                   </div>
 
                   <div className="p-6">
-                    <h5 className="text-xl font-semibold text-primary-foreground">
+                    <h5 className="text-primary-foreground text-xl font-semibold">
                       {item.name}
                     </h5>
                     <p className="text-primary-foreground">{item.title}</p>
-                    <p className="mt-4 text-secondary">{item.description}</p>
+                    <p className="text-secondary mt-4">{item.description}</p>
                   </div>
                 </div>
 

@@ -6,15 +6,20 @@ import type { NewsletterFormState } from "@/types/newsletter";
 import z from "zod/v4";
 
 export const verifyEmail = async (email: string) => {
-  const response = await fetch(
-    `https://verifyright.co/verify/${encodeURIComponent(email)}?token=${env.VERIFY_RIGHT_API_KEY}`,
-  );
+  try {
+    //TODO: Replace verifyright with an alternative if it keeps failing
+    const response = await fetch(
+      `https://verifyright.co/verify/${encodeURIComponent(email)}?token=${env.VERIFY_RIGHT_API_KEY}`,
+    );
 
-  const data = (await response.json()) as {
-    status: boolean;
-  };
+    const data = (await response.json()) as {
+      status: boolean;
+    };
 
-  return data.status;
+    return data.status;
+  } catch {
+    return false;
+  }
 };
 
 export const addEmailToNewsletter = async (
@@ -27,17 +32,18 @@ export const addEmailToNewsletter = async (
   if (!result.success) {
     return {
       status: "error",
-      error: "Invalid email",
+      error: "Invalid email, please try again.",
     } satisfies NewsletterFormState;
   }
 
-  const isValidEmail = await verifyEmail(result.data);
-  if (!isValidEmail) {
-    return {
-      status: "error",
-      error: "Invalid email",
-    } satisfies NewsletterFormState;
-  }
+  // TODO: Uncomment this when verifyright is fixed
+  // const isValidEmail = await verifyEmail(result.data);
+  // if (!isValidEmail) {
+  //   return {
+  //     status: "error",
+  //     error: "Invalid email, please try again.",
+  //   } satisfies NewsletterFormState;
+  // }
 
   await resend.contacts.create({
     email: result.data,

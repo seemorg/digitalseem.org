@@ -3,5 +3,10 @@
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
     ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
   ],
-  "tailwindCSS.experimental.configFile": "./src/styles/globals.css"
+  "tailwindCSS.experimental.configFile": "./src/styles/globals.css",
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#5D0C19",
+    "titleBar.activeBackground": "#821123",
+    "titleBar.activeForeground": "#FFFBFC"
+  }
 }

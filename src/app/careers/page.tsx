@@ -39,8 +39,7 @@ export default async function CareersPage() {
             </h1>
 
             <p className="mt-2 text-secondary">
-              Seemore Foundation is a non-profit building the future of Islamic
-              Law research.
+            Help us advance Islamic research with innovative technology. Explore our current openings and apply to be part of a mission-driven team.
             </p>
           </div>
 
