@@ -32,7 +32,9 @@ export default function Projects() {
                 <ul className="text-secondary/70 mt-4 list-inside list-disc text-xl">
                   <li>15,000+ Islamic Books</li>
                   <li>AI-Powered Search for Islamic Sources</li>
-                  <li>Curated Islamic Collections (universal corpus to come!)</li>
+                  <li>
+                    Curated Islamic Collections (universal corpus to come!)
+                  </li>
                 </ul>
               </div>
 
@@ -70,7 +72,8 @@ export default function Projects() {
                 </h3>
 
                 <p className="text-secondary/70 mt-6 text-xl">
-                Tansis converts Arabic text to Latin script using various transliteration standards including:
+                  Tansis converts Arabic text to Latin script using various
+                  transliteration standards including:
                 </p>
 
                 <ul className="text-secondary/70 mt-4 list-inside list-disc text-xl">
@@ -141,7 +144,7 @@ export default function Projects() {
             />
           </BentoCard>
 
-          <BentoCard className="flex min-h-[400px] flex-col justify-between">
+          {/* <BentoCard className="flex min-h-[400px] flex-col justify-between">
             <div>
               <h3 className="text-primary-foreground text-4xl font-semibold">
                 Core Corpus
@@ -182,7 +185,7 @@ export default function Projects() {
             <p className="text-primary-foreground mt-6 text-lg italic">
               Future Project
             </p>
-          </BentoCard>
+          </BentoCard> */}
         </div>
       </Container>
     </section>
