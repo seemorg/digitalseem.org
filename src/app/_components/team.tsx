@@ -40,6 +40,13 @@ const team = [
     image: "/images/team/ahmed-aktan.png",
   },
   {
+    name: "Abtsam Saleh",
+    title: "Director of Operations",
+    description:
+      "Abtsam is a PhD candidate at Harvard University researching the social dimensions of human-centered technologies.",
+    image: "/images/team/default.png",
+  },
+  {
     name: "Anas Hassanien",
     title: "Software Engineer",
     description:
