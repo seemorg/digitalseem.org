@@ -12,13 +12,6 @@ import TeamCarousel from "./team-carousel.client";
 
 const team = [
   {
-    name: "Adnan Zulfiqar",
-    title: "Board Member",
-    description:
-      "Adnan specializes in Islamic and criminal law. He drafted criminal codes for Maldives and Somalia.",
-    image: "/images/team/adnan.png",
-  },
-  {
     name: "Intisar Rabb",
     title: "Board Member",
     description:
@@ -33,6 +26,13 @@ const team = [
     image: "/images/team/zeki.png",
   },
   {
+    name: "Adnan Zulfiqar",
+    title: "Board Member",
+    description:
+      "Adnan specializes in Islamic and criminal law. He drafted criminal codes for Maldives and Somalia.",
+    image: "/images/team/adnan.png",
+  },
+  {
     name: "Ahmet Aktan",
     title: "Digitization Lead",
     description:
@@ -40,18 +40,18 @@ const team = [
     image: "/images/team/ahmed-aktan.png",
   },
   {
-    name: "Abtsam Saleh",
-    title: "Director of Operations",
-    description:
-      "Abtsam is a PhD candidate at Harvard University researching the social dimensions of human-centered technologies.",
-    image: "/images/team/default.png",
-  },
-  {
     name: "Anas Hassanien",
     title: "Software Engineer",
     description:
       "Anas leads the development of our core products. He was a software engineer at Simli AI.",
     image: "/images/team/anas.png",
+  },
+  {
+    name: "Abtsam Saleh",
+    title: "Director of Operations",
+    description:
+      "Abtsam is a PhD candidate at Harvard University researching the social dimensions of human-centered technologies.",
+    image: "/images/team/abtsam.png",
   },
   {
     name: "Ismail Safadi",
