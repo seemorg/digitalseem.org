@@ -19,8 +19,12 @@ export default function Projects() {
             <div className="flex h-full flex-col lg:w-1/2 lg:justify-between">
               <div>
                 <h3 className="text-primary-foreground text-4xl font-semibold">
-                  Usul.ai
+                  Usul AI
                 </h3>
+
+                <p className="text-primary-foreground/70 mt-2">
+                  AI-powered Islamic library
+                </p>
 
                 <p className="text-secondary/70 mt-6 text-xl">
                   Usul is an AI-powered platform designed to evolve how Islamic
@@ -68,8 +72,12 @@ export default function Projects() {
             <div className="flex h-full flex-col lg:w-1/2 lg:justify-between">
               <div>
                 <h3 className="text-primary-foreground text-4xl font-semibold">
-                  Tansis.ai
+                  Tansis AI
                 </h3>
+
+                <p className="text-primary-foreground/70 mt-2">
+                  AI-enabled Arabic to English transliteration
+                </p>
 
                 <p className="text-secondary/70 mt-6 text-xl">
                   Tansis converts Arabic text to Latin script using various
@@ -115,11 +123,11 @@ export default function Projects() {
             <div className="flex h-full flex-col lg:w-1/2 lg:justify-between">
               <div>
                 <h3 className="text-primary-foreground text-4xl font-semibold">
-                  Arabic OCR
+                  Maktoob OCR
                 </h3>
 
                 <p className="text-secondary/70 mt-6 text-xl">
-                  A state-of-the-art Arabic OCR model using recent breakthroughs
+                  Maktoob OCR is a state-of-the-art Arabic OCR model using recent breakthroughs
                   in Vision LLMs. We&apos;re using and improving the model
                   internally. Stay tuned for the public release.
                 </p>

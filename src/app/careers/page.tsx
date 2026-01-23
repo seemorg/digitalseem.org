@@ -39,7 +39,7 @@ export default async function CareersPage() {
             </h1>
 
             <p className="mt-2 text-secondary">
-            Help us advance Islamic research with innovative technology. Explore our current openings and apply to be part of a mission-driven team.
+              Help us advance Islamic research with innovative technology. Explore our current openings and apply to be part of a mission-driven team.
             </p>
           </div>
 

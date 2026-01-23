@@ -1,6 +1,6 @@
 import { type Metadata, type Viewport } from "next";
 
-const contactEmail = "contact@digitalseem.org";
+const contactEmail = "contact@usul.ai";
 
 export const siteConfig = {
   org: "Seemore Foundation",
@@ -18,7 +18,7 @@ export const siteConfig = {
     height: 473,
     alt: "Seemore Cover",
   },
-  url: "https://digitalseem.org",
+  url: "https://seemore.foundation",
 };
 
 export const getMetadata = ({

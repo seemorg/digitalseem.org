@@ -129,7 +129,7 @@ export default function Hero() {
               href={siteConfig.contact.mailto}
               className="text-lime-400 underline"
             >
-              let&apos;s get in touch
+              let&apos;s be in touch.
             </a>
             .
           </p>

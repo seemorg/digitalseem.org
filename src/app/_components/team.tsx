@@ -15,70 +15,70 @@ const team = [
     name: "Intisar Rabb",
     title: "Board Member",
     description:
-      "Intisar is a Law professor at Harvard. She leads SHARIAsource and the Program in Islamic Law.",
+      "She is a Professor of law and history at Harvard, specializing in criminal law and interpretation (usul al-fiqh). She leads the Program in Islamic Law and the SHARIAsource Lab , and IslamicLawBlog.",
     image: "/images/team/intisar.png",
   },
   {
     name: "Zeki Mokhtarzada",
     title: "Board Member",
     description:
-      "Zeki is an entrepreneur with deep technical expertise. He co-founded Freewebs and Truebill.",
+      " He is a serial entrepeneur and technology innovator. He has served as CTO to various start-ups and has co-founded multiple ventures, including webs.com (acquired by Vistaprint) and Truebill (now Rocket Money).",
     image: "/images/team/zeki.png",
   },
   {
     name: "Adnan Zulfiqar",
     title: "Board Member",
     description:
-      "Adnan specializes in Islamic and criminal law. He drafted criminal codes for Maldives and Somalia.",
+      "He is a Professor of law at Boston College Law School, where he teaches and writes on criminal law and the laws of war. He helped draft the Islamic criminal codes for the Maldives and Somalia.",
     image: "/images/team/adnan.png",
   },
   {
     name: "Ahmet Aktan",
     title: "Digitization Lead",
     description:
-      "Ahmed holds a PhD. from Al-Azhar university. He leads the digitization team and efforts.",
+      "He is a researcher who holds a PhD in Islamic Studies from Al-Azhar University. He leads the digitization team and efforts to expand the collections at Usul AI.",
     image: "/images/team/ahmed-aktan.png",
   },
   {
     name: "Anas Hassanien",
     title: "Software Engineer",
     description:
-      "Anas leads the development of our core products. He was a software engineer at Simli AI.",
+      "He is a software engineer with full-stack experience, who previously served at Simli AI. He leads the development of core products as Usul.AI.",
     image: "/images/team/anas.png",
   },
   {
     name: "Abtsam Saleh",
     title: "Director of Operations",
     description:
-      "Abtsam is a PhD candidate at Harvard University researching the social dimensions of human-centered technologies.",
+      "She is a PhD candidate at Harvard University researching the social dimensions of humancentered technologies, and serves as an administrator and researcher at Usul.AI, where she directs operations and bridges engineering and research",
     image: "/images/team/abtsam.png",
   },
   {
     name: "Ismail Safadi",
     title: "Researcher",
     description:
-      "Ismail specializes in Hanafi fiqh. He studied at the University of Jordan and in Turkey.",
+      "He is a researcher who specializes in Hanafi fiqh. He studied at the University of Jordan and in Turkey. He works on book digitization and annotation at Usul AI.",
     image: "/images/team/ismail.png",
   },
   {
     name: "Ryad Ramo",
     title: "Researcher",
     description:
-      "Ryad specializes in Maliki fiqh and Andulisian hisory. He co-managed Markaz Imam Malik.",
+      "He is a researcher of Islamic knowledge and history, holds a BA in Islamic Studies, and founded the publication the Gems of Al-Andalus. He works on book-digitization and annotation at Usul AI.",
     image: "/images/team/ryad.png",
   },
   {
     name: "Abdellatif Abdelfattah",
-    title: "Founding CEO",
+    title: "Former CEO",
     description:
-      "Abdellatif co-founded Tarteel AI, lead engineering at Quran.com, and worked at Twitter.",
+      "He is an engineer who served as a co-founding engineer at Tarteel AI and our own Usul AI. He previously lead engineering at Quran.com and worked at Twitter",
     image: "/images/team/abdellatif.png",
   },
   {
     name: "Ahmed Riad",
-    title: "Founding Engineer",
+    title: "Former Lead Engineer",
     description:
-      "Ahmed co-founded Remail AI, Betterbook, and was an engineer at Quran.com.",
+      "He is a software engineer who served as founding-engineer at at several start-ups (including Remail AI, Betterbook, and our own Usul AI). he also served as an engineer at Qur'an.com",
     image: "/images/team/ahmed-riad.png",
   },
 ];
