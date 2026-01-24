@@ -22,7 +22,7 @@ const team = [
     name: "Zeki Mokhtarzada",
     title: "Board Member",
     description:
-      " He is a serial entrepeneur and technology innovator. He has served as CTO to various start-ups and has co-founded multiple ventures, including webs.com (acquired by Vistaprint) and Truebill (now Rocket Money).",
+      "He is a serial entrepeneur and technology innovator. He has served as CTO to various start-ups and has co-founded multiple ventures, including webs.com (acquired by Vistaprint) and Truebill (now Rocket Money).",
     image: "/images/team/zeki.png",
   },
   {
@@ -50,7 +50,7 @@ const team = [
     name: "Abtsam Saleh",
     title: "Director of Operations",
     description:
-      "She is a PhD candidate at Harvard University researching the social dimensions of humancentered technologies, and serves as an administrator and researcher at Usul.AI, where she directs operations and bridges engineering and research",
+      "She is a PhD candidate at Harvard University researching the social dimensions of humancentered technologies, and serves as an administrator and researcher at Usul.AI, where she directs operations and bridges engineering and research.",
     image: "/images/team/abtsam.png",
   },
   {
@@ -71,7 +71,7 @@ const team = [
     name: "Abdellatif Abdelfattah",
     title: "Former CEO",
     description:
-      "He is an engineer who served as a co-founding engineer at Tarteel AI and our own Usul AI. He previously lead engineering at Quran.com and worked at Twitter",
+      "He is an engineer who served as a co-founding engineer at Tarteel AI and our own Usul AI. He previously lead engineering at Quran.com and worked at Twitter.",
     image: "/images/team/abdellatif.png",
   },
   {
